@@ -40,6 +40,8 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'max-len': ['error', { code: 120, tabWidth: 2, ignoreComments: true }],
     'i18next/no-literal-string': ['error', { markupOnly: true }],
+    semi: 'off',
+    'arrow-body-style': 'off',
   },
   globals: {
     __IS_DEV__: true,
