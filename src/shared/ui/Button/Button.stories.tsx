@@ -36,11 +36,11 @@ OutlineSizeL.args = {
   size: ButtonSize.L,
 };
 
-export const OutlineSizeM = Template.bind({});
-OutlineSizeM.args = {
+export const OutlineSizeXL = Template.bind({});
+OutlineSizeXL.args = {
   children: 'Button',
   theme: ThemeButton.OUTLINE,
-  size: ButtonSize.M,
+  size: ButtonSize.XL,
 };
 
 export const Background = Template.bind({});
