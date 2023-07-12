@@ -1,6 +1,6 @@
 import classNames from 'shared/lib/classNames/classNames';
 import {
-  ReactNode, MouseEvent, useState, useRef, useEffect, useCallback,
+  MouseEvent, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { Portal } from 'shared/ui/Portal/Portal';
 import cls from './Modal.module.scss'
