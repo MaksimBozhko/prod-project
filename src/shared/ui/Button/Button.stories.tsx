@@ -77,3 +77,10 @@ SquareXL.args = {
   size: ButtonSize.XL,
   square: true,
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: '>',
+  theme: ThemeButton.OUTLINE,
+  disabled: true,
+};

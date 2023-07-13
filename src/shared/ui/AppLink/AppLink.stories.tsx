@@ -54,4 +54,4 @@ SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 //   children: 'Text',
 //   theme: ThemeAppLink.RED,
 // };
-// RedDark.decorators = [ThemeDecorator(Theme.DARK)];
+// RedDark.decorators = [StoreDecorator(Theme.DARK)];
