@@ -25,5 +25,13 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstname": "Maksim",
+    "lastname": "B",
+    "age": 20,
+    "currency": "RUB",
+    "country": "Belarus",
+    "username": "admin",
+    "avatar": ""
+  }
 }
