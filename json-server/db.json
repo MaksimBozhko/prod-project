@@ -27,11 +27,12 @@
   ],
   "profile": {
     "firstname": "Maksim",
-    "lastname": "Bozhko",
+    "lastname": "Bozhkom",
     "age": 20,
-    "currency": "RUB",
-    "country": "Belarus",
+    "currency": "USD",
+    "country": "Russia",
     "username": "admin",
-    "avatar": ""
+    "avatar": "https://icon-library.com/images/user-icon-jpg/user-icon-jpg-27.jpg",
+    "city": "Минск"
   }
 }

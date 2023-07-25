@@ -2,7 +2,7 @@ import { loginByUsername } from 'features/AuthByUserName/model/services/loginByU
 import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
-describe('fetchProfileData.test', () => {
+describe('updateProfileData.test', () => {
   // let dispatch: Dispatch;
   // let getState: () => StateSchema;
   //
@@ -14,7 +14,7 @@ describe('fetchProfileData.test', () => {
   // test('success login', async () => {
   //   const userValue = { username: '123', id: '1' }
   //   mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValue }))
-  //   const action = fetchProfileData({ username: '123', password: '123' })
+  //   const action = updateProfileData({ username: '123', password: '123' })
   //   const result = await action(dispatch, getState, undefined)
   //
   //   expect(dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue))
@@ -26,7 +26,7 @@ describe('fetchProfileData.test', () => {
   //
   // test('reject login', async () => {
   //   mockedAxios.post.mockReturnValue(Promise.resolve({ status: 403 }))
-  //   const action = fetchProfileData({ username: '123', password: '123' })
+  //   const action = updateProfileData({ username: '123', password: '123' })
   //   const result = await action(dispatch, getState, undefined)
   //
   //   expect(dispatch).toHaveBeenCalledTimes(2)
