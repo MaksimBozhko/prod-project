@@ -49,7 +49,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.ProfileCard, mods, [className, cls.loading])}>
+      <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
         <Loader />
       </div>
     )
@@ -69,7 +69,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
   }
 
   return (
-    <div className={classNames(cls.ProfileCard, {}, [className])}>
+    <div className={classNames(cls.ProfileCard, mods, [className])}>
       {data?.avatar && (
         <div className={cls.avatarWrapper}>
           <Avatar src={data?.avatar} />
