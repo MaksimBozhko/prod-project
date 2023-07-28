@@ -1,5 +1,5 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { getLoginError } from 'features/AuthByUserName/model/selectors/getLoginError/getLoginError';
+import { getLoginError } from './getLoginError';
 
 describe('getLoginError.test', () => {
   test('should return error', () => {
@@ -7,12 +7,11 @@ describe('getLoginError.test', () => {
       loginForm: {
         error: 'error',
       },
-    }
-    expect(getLoginError(state as StateSchema)).toEqual('error')
-  })
-
+    };
+    expect(getLoginError(state as StateSchema)).toEqual('error');
+  });
   test('should work with empty state', () => {
-    const state: DeepPartial<StateSchema> = {}
-    expect(getLoginError(state as StateSchema)).toEqual(undefined)
-  })
-})
+    const state: DeepPartial<StateSchema> = {};
+    expect(getLoginError(state as StateSchema)).toEqual(undefined);
+  });
+});
