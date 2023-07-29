@@ -1,11 +1,11 @@
-import React, { memo, useCallback, useState } from 'react';
-import classNames from 'shared/lib/classNames/classNames';
+import { LoginModal } from 'features/AuthByUsername';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
-import { LoginModal } from 'features/AuthByUserName/ui/LoginModal/LoginModal';
-import { useDispatch, useSelector } from 'react-redux';
+import { memo, useCallback, useState } from 'react';
 import { getUserAuthData, userActions } from 'entities/User';
-import cls from './Navbar.module.scss';
+import classNames from 'shared/lib/classNames/classNames';
+import cls from './Navbar.module.scss'
 
 interface NavbarProps {
   className?: string

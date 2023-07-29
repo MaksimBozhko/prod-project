@@ -21,7 +21,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsProps) => {
 
   return (
     <div className={classNames('', {}, [className])}>
-      {t('детали статей')}
       <ArticleDetails id={id} />
     </div>
   )

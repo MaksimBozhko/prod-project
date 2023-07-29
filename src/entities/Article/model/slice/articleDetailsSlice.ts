@@ -4,6 +4,8 @@ import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById'
 
 const initialState: ArticleDetailsSchema = {
   isLoading: false,
+  error: undefined,
+  data: undefined,
 };
 
 export const articleDetailsSlice = createSlice({

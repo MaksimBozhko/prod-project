@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Text, ThemeText } from './Text';
+import { Text, TextSize, ThemeText } from './Text';
 
 export default {
   title: 'shared/Text',
@@ -54,3 +54,9 @@ onlyTextDark.args = {
   text: 'Lorem text',
 };
 onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const sizeL = Template.bind({});
+sizeL.args = {
+  text: 'Lorem text',
+  size: TextSize.L,
+};
