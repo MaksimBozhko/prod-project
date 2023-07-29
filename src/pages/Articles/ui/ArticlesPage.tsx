@@ -1,18 +1,18 @@
 import classNames from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 
-interface ArticleDetailsProps {
+interface Props {
   className?: string
 }
 
-const ArticleDetails = ({ className }: ArticleDetailsProps) => {
+const ArticlesPage = ({ className }: Props) => {
   const { t } = useTranslation('article')
 
   return (
     <div className={classNames('', {}, [className])}>
-      {t('детали статей')}
+      {t('статьи')}
     </div>
   )
 }
 
-export default ArticleDetails
+export default ArticlesPage
