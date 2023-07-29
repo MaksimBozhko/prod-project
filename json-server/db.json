@@ -81,6 +81,164 @@
           ]
         }
       ]
+    },
+    {
+      "id": "2",
+      "title": "Python News",
+      "subtitle": "What's New in Python for 2022?",
+      "img": "https://example.com/python.png",
+      "views": 850,
+      "createdAt": "15.05.2022",
+      "type": ["IT", "SCIENCE"],
+      "blocks": [
+        {
+          "id": "10",
+          "type": "TEXT",
+          "title": "Introduction to Python",
+          "paragraphs": [
+            "Python is a high-level programming language known for its simplicity and readability.",
+            "It is widely used in various domains, including web development, data analysis, and artificial intelligence.",
+            "If you are new to Python, this article will guide you through the basics of the language."
+          ]
+        },
+        {
+          "id": "11",
+          "type": "CODE",
+          "code": "print('Hello, world!')"
+        },
+        {
+          "id": "12",
+          "type": "IMAGE",
+          "src": "https://example.com/python-screenshot.png",
+          "title": "Screenshot of Python Code"
+        },
+        {
+          "id": "13",
+          "type": "TEXT",
+          "paragraphs": [
+            "Python provides a large standard library and a vibrant community that contributes to numerous third-party libraries.",
+            "Its versatility and ease of use make it a popular choice for both beginners and experienced developers.",
+            "In this article, we will explore some of the exciting features introduced in Python 3.10."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Machine Learning Trends",
+      "subtitle": "Latest Developments in Machine Learning",
+      "img": "https://example.com/ml-trends.png",
+      "views": 1200,
+      "createdAt": "10.09.2022",
+      "type": ["SCIENCE", "IT"],
+      "blocks": [
+        {
+          "id": "14",
+          "type": "TEXT",
+          "title": "Overview of Machine Learning",
+          "paragraphs": [
+            "Machine Learning is a subset of artificial intelligence that enables systems to learn from data and improve their performance over time.",
+            "The field has seen rapid advancements in recent years, leading to innovative applications in various industries."
+          ]
+        },
+        {
+          "id": "15",
+          "type": "CODE",
+          "code": "model.fit(X_train, y_train)"
+        },
+        {
+          "id": "16",
+          "type": "TEXT",
+          "paragraphs": [
+            "Deep Learning, a subfield of Machine Learning, has revolutionized the way we approach complex tasks such as image recognition and natural language processing.",
+            "In this article, we will explore the latest trends and breakthroughs in the field of Machine Learning."
+          ]
+        },
+        {
+          "id": "17",
+          "type": "IMAGE",
+          "src": "https://example.com/ml-algorithms.png",
+          "title": "Illustration of Machine Learning Algorithms"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Blockchain Technology",
+      "subtitle": "The Power of Decentralization",
+      "img": "https://example.com/blockchain.png",
+      "views": 620,
+      "createdAt": "03.11.2022",
+      "type": ["IT"],
+      "blocks": [
+        {
+          "id": "18",
+          "type": "TEXT",
+          "title": "Introduction to Blockchain",
+          "paragraphs": [
+            "Blockchain is a distributed and decentralized ledger technology that ensures transparency and security in transactions.",
+            "Originally designed for supporting cryptocurrencies like Bitcoin, it has found applications in various sectors, including finance, healthcare, and supply chain management."
+          ]
+        },
+        {
+          "id": "19",
+          "type": "CODE",
+          "code": "const block = new Block(data, previousHash, timestamp);"
+        },
+        {
+          "id": "20",
+          "type": "TEXT",
+          "paragraphs": [
+            "In this article, we will delve into the fundamental concepts of blockchain and explore its potential to disrupt traditional systems.",
+            "Moreover, we will discuss the challenges and opportunities associated with this revolutionary technology."
+          ]
+        },
+        {
+          "id": "21",
+          "type": "IMAGE",
+          "src": "https://example.com/blockchain-network.png",
+          "title": "Illustration of Blockchain Network"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Space Exploration",
+      "subtitle": "Discovering the Cosmos",
+      "img": "https://example.com/space-exploration.png",
+      "views": 980,
+      "createdAt": "22.12.2022",
+      "type": ["SCIENCE"],
+      "blocks": [
+        {
+          "id": "22",
+          "type": "TEXT",
+          "title": "The Journey to the Stars",
+          "paragraphs": [
+            "Space exploration has been one of humanity's greatest endeavors, driven by curiosity and the quest for knowledge.",
+            "Throughout history, we have made remarkable strides in understanding our universe and the celestial bodies beyond Earth."
+          ]
+        },
+        {
+          "id": "23",
+          "type": "IMAGE",
+          "src": "https://example.com/space-rovers.png",
+          "title": "Rovers Exploring Mars"
+        },
+        {
+          "id": "24",
+          "type": "TEXT",
+          "paragraphs": [
+            "From the first satellite launch to Mars rovers and the Voyager missions, space exploration has shaped our understanding of the cosmos.",
+            "In this article, we will take a glimpse into some of the most iconic space missions and the ongoing efforts to explore outer space."
+          ]
+        },
+        {
+          "id": "25",
+          "type": "CODE",
+          "code": "// Placeholder for future space exploration code examples"
+        }
+      ]
     }
   ],
   "comments": [
