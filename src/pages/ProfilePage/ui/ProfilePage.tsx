@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
   fetchProfileData,
@@ -8,7 +8,8 @@ import {
   getProfileReadonly,
   profileActions,
   ProfileCard,
-  profileReducer, ValidateProfileError,
+  profileReducer,
+  ValidateProfileError,
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
@@ -19,6 +20,7 @@ import {
 } from 'entities/Profile/model/selectors/getProfileValidateError/getProfileValidateError';
 import { Text, ThemeText } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducerList = {
@@ -43,11 +45,9 @@ const ProfilePage = () => {
   const readonly = useSelector(getProfileReadonly)
   const validateErrors = useSelector(getProfileValidateError)
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData())
-    }
-  }, [dispatch])
+  useInitialEffect(() => {
+    dispatch(fetchProfileData())
+  })
 
   const onChangeFirstName = useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ firstname: value || '' }))
