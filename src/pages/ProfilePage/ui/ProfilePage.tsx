@@ -21,6 +21,7 @@ import {
 import { Text, ThemeText } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducerList = {
@@ -30,6 +31,7 @@ const reducers: ReducerList = {
 const ProfilePage = () => {
   const dispatch = useAppDispatch()
   const { t } = useTranslation('profile')
+  const { id } = useParams<{ id: string }>()
 
   const validateErrorTranslates = {
     [ValidateProfileError.SERVER_ERROR]: t('Ошибка сервера при сохранении'),
@@ -46,7 +48,9 @@ const ProfilePage = () => {
   const validateErrors = useSelector(getProfileValidateError)
 
   useInitialEffect(() => {
-    dispatch(fetchProfileData())
+    if (id) {
+      dispatch(fetchProfileData(id))
+    }
   })
 
   const onChangeFirstName = useCallback((value?: string) => {

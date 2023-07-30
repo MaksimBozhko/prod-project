@@ -15,7 +15,15 @@ import {
   getArticleCommentsIsLoading,
 } from 'pages/ArticleDetailsPage/model/selectors/comments';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId';
+import {
+  fetchCommentsByArticleId,
+} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { AddCommentForm } from 'features/addCommentForm';
+import { useCallback } from 'react';
+import {
+  addCommentForArticle,
+} from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
+import { getAddCommentsFormText } from 'features/addCommentForm/model/selectors/addCommentsFormSelectors';
 import cls from './ArticleDetailsPage.module.scss'
 
 interface ArticleDetailsProps {
@@ -33,10 +41,15 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsProps) => {
   const comments = useSelector(getArticleComments.selectAll)
   const error = useSelector(getArticleCommentsError)
   const isLoading = useSelector(getArticleCommentsIsLoading)
+  const text = useSelector(getAddCommentsFormText)
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id))
   })
+
+  const onSendComment = useCallback(() => {
+    dispatch(addCommentForArticle(text))
+  }, [dispatch, text])
 
   if (!id) {
     return (
@@ -51,6 +64,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsProps) => {
       <div className={classNames('', {}, [className])}>
         <ArticleDetails id={id} />
         <Text title={t('Комментарии')} className={cls.commentTitle} />
+        <AddCommentForm onSendComment={onSendComment} />
         <CommentList
           comments={comments}
           isLoading={isLoading}

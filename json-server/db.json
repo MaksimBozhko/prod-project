@@ -89,7 +89,10 @@
       "img": "https://example.com/python.png",
       "views": 850,
       "createdAt": "15.05.2022",
-      "type": ["IT", "SCIENCE"],
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "10",
@@ -130,7 +133,10 @@
       "img": "https://example.com/ml-trends.png",
       "views": 1200,
       "createdAt": "10.09.2022",
-      "type": ["SCIENCE", "IT"],
+      "type": [
+        "SCIENCE",
+        "IT"
+      ],
       "blocks": [
         {
           "id": "14",
@@ -169,7 +175,9 @@
       "img": "https://example.com/blockchain.png",
       "views": 620,
       "createdAt": "03.11.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "18",
@@ -208,7 +216,9 @@
       "img": "https://example.com/space-exploration.png",
       "views": 980,
       "createdAt": "22.12.2022",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "22",
@@ -331,6 +341,54 @@
       "text": "Хотя я не специалист в космических науках, мне интересно узнать о новейших достижениях в этой области.",
       "articleId": "5",
       "userId": "2"
+    },
+    {
+      "params": {
+        "articleId": "3",
+        "userId": "1",
+        "text": "dsfsdfsdf"
+      },
+      "id": "l-dEi1_"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "1",
+        "text": "dsfsdfsdfsdfsdf"
+      },
+      "id": "QHjuPND"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "1",
+        "text": "dsfsdfsdfsdfsdf"
+      },
+      "id": "tBg29Y_"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "1",
+        "text": "dsfsdfsdfsdfsdf"
+      },
+      "id": "3uH9pG3"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "1",
+        "text": "dsfsdfsdfsdfsdf"
+      },
+      "id": "UcDogJE"
+    },
+    {
+      "params": {
+        "articleId": "1",
+        "userId": "1",
+        "text": "sdfsdfsdf"
+      },
+      "id": "7Uewpo2"
     }
   ],
   "users": [
@@ -349,14 +407,30 @@
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "jgh",
+      "lastname": "Antonov",
+      "age": 45,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Russia",
+      "username": "admin213",
+      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200",
+      "firstname": "Anton "
+    },
+    {
+      "id": "2",
+      "first": "vfg",
+      "lastname": "Bozhko",
+      "age": 20,
+      "currency": "USD",
+      "country": "Armenia",
+      "city": "Moscow",
+      "username": "adm",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg",
+      "firstname": "Maksim"
+    }
+  ]
 }

@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import { getProfileReadonly } from 'entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly';
 import { useCallback } from 'react';
 import { profileActions, updateProfileData } from 'entities/Profile';
+import { useParams } from 'react-router-dom';
 import cls from './ProfilePageHeader.module.scss'
 
 interface ProfilePageHeaderProps {
@@ -15,6 +16,7 @@ interface ProfilePageHeaderProps {
 
 export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   const { t } = useTranslation('profile')
+  const { id } = useParams<{ id: string }>()
 
   const dispatch = useAppDispatch()
   const readonly = useSelector(getProfileReadonly)
@@ -28,8 +30,10 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   }, [dispatch])
 
   const onSave = useCallback(() => {
-    dispatch(updateProfileData())
-  }, [dispatch])
+    if (id) {
+      dispatch(updateProfileData(id))
+    }
+  }, [dispatch, id])
 
   return (
     <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
