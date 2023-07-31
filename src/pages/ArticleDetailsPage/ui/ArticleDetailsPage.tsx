@@ -5,25 +5,14 @@ import { useParams } from 'react-router-dom';
 import { Text } from 'shared/ui/Text/Text';
 import { CommentList } from 'entities/Comment/ui/CommentList/CommentList';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {
-  articleDetailsCommentsReducer,
-  getArticleComments,
-} from 'pages/ArticleDetailsPage/model/slices/ArticleDetailsCommentsSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  getArticleCommentsError,
-  getArticleCommentsIsLoading,
-} from 'pages/ArticleDetailsPage/model/selectors/comments';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import {
-  fetchCommentsByArticleId,
-} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { AddCommentForm } from 'features/addCommentForm';
 import { useCallback } from 'react';
-import {
-  addCommentForArticle,
-} from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
-import { getAddCommentsFormText } from 'features/addCommentForm/model/selectors/addCommentsFormSelectors';
+import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
+import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { getArticleCommentsError, getArticleCommentsIsLoading } from '../model/selectors/comments';
+import { articleDetailsCommentsReducer, getArticleComments } from '../model/slices/ArticleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss'
 
 interface ArticleDetailsProps {
@@ -41,15 +30,14 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsProps) => {
   const comments = useSelector(getArticleComments.selectAll)
   const error = useSelector(getArticleCommentsError)
   const isLoading = useSelector(getArticleCommentsIsLoading)
-  const text = useSelector(getAddCommentsFormText)
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id))
   })
 
-  const onSendComment = useCallback(() => {
+  const onSendComment = useCallback((text) => {
     dispatch(addCommentForArticle(text))
-  }, [dispatch, text])
+  }, [dispatch])
 
   if (!id) {
     return (

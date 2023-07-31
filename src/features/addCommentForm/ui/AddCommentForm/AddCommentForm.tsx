@@ -2,17 +2,17 @@ import classNames from 'shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
 import { Input } from 'shared/ui/Input/Input';
-import { Button } from 'shared/ui/Button/Button';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { addCommentFormActions, addCommentFormReducer } from 'features/addCommentForm/model/slice/addCommentFormSlice';
 import { useSelector } from 'react-redux';
-import { getAddCommentsFormText } from 'features/addCommentForm/model/selectors/addCommentsFormSelectors';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice';
+import { getAddCommentsFormError, getAddCommentsFormText } from '../../model/selectors/addCommentsFormSelectors';
 import cls from './AddCommentForm.module.scss'
 
 export interface AddCommentFormProps {
   className?: string
-  onSendComment: () => void
+  onSendComment: (text: string) => void
 }
 
 const reducer: ReducerList = {
@@ -22,6 +22,7 @@ const reducer: ReducerList = {
 const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) => {
   const { t } = useTranslation()
   const text = useSelector(getAddCommentsFormText)
+  const error = useSelector(getAddCommentsFormError)
   const dispatch = useAppDispatch()
 
   const onCommentTextChange = useCallback((value: string) => {
@@ -29,8 +30,9 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
   }, [dispatch])
 
   const onSendHandler = useCallback(() => {
-    onSendComment()
-  }, [onSendComment])
+    onSendComment(text || '')
+    onCommentTextChange('')
+  }, [onCommentTextChange, onSendComment, text])
 
   return (
     <DynamicModuleLoader reducers={reducer}>
@@ -41,7 +43,12 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
           onChange={onCommentTextChange}
           placeholder={t('Введите Комментарий')}
         />
-        <Button onClick={onSendHandler}>{t('Отправить')}</Button>
+        <Button
+          theme={ThemeButton.OUTLINE}
+          onClick={onSendHandler}
+        >
+          {t('Отправить')}
+        </Button>
       </div>
     </DynamicModuleLoader>
   )
