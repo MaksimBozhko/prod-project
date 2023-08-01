@@ -19,6 +19,7 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
+      "userId": "1",
       "type": [
         "IT"
       ],
@@ -89,6 +90,7 @@
       "img": "https://example.com/python.png",
       "views": 850,
       "createdAt": "15.05.2022",
+      "userId": "1",
       "type": [
         "IT",
         "SCIENCE"
@@ -133,6 +135,7 @@
       "img": "https://example.com/ml-trends.png",
       "views": 1200,
       "createdAt": "10.09.2022",
+      "userId": "1",
       "type": [
         "SCIENCE",
         "IT"
@@ -175,6 +178,7 @@
       "img": "https://example.com/blockchain.png",
       "views": 620,
       "createdAt": "03.11.2022",
+      "userId": "2",
       "type": [
         "IT"
       ],
@@ -216,6 +220,7 @@
       "img": "https://example.com/space-exploration.png",
       "views": 980,
       "createdAt": "22.12.2022",
+      "userId": "2",
       "type": [
         "SCIENCE"
       ],
