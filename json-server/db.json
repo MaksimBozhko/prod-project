@@ -87,7 +87,7 @@
       "id": "2",
       "title": "Python News",
       "subtitle": "What's New in Python for 2022?",
-      "img": "https://example.com/python.png",
+      "img": "https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png",
       "views": 850,
       "createdAt": "15.05.2022",
       "userId": "1",
@@ -132,7 +132,7 @@
       "id": "3",
       "title": "Machine Learning Trends",
       "subtitle": "Latest Developments in Machine Learning",
-      "img": "https://example.com/ml-trends.png",
+      "img": "https://media.istockphoto.com/id/1194689977/vector/artificial-intelligence-thin-line-icon-machine-learning-logo-for-deep-tech-vector.jpg?s=612x612&w=0&k=20&c=Dc9Pagwm2mYjLCsfg7Y-hkH7yMTNtlu9K73quTPIYhM=",
       "views": 1200,
       "createdAt": "10.09.2022",
       "userId": "1",
@@ -175,7 +175,7 @@
       "id": "4",
       "title": "Blockchain Technology",
       "subtitle": "The Power of Decentralization",
-      "img": "https://example.com/blockchain.png",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9UP_1qwqZvq6n1h_4RqzDF2tfUFDgBcp85P4QeI8y&s",
       "views": 620,
       "createdAt": "03.11.2022",
       "userId": "2",
@@ -217,7 +217,7 @@
       "id": "5",
       "title": "Space Exploration",
       "subtitle": "Discovering the Cosmos",
-      "img": "https://example.com/space-exploration.png",
+      "img": "https://media.istockphoto.com/id/1300054518/vector/modern-space-helmet-with-rocket-launch-inside.jpg?s=612x612&w=0&k=20&c=EOUiDmdTVh0-GpDKqIGovvZ9jwplPCDVGIYQsuCPwD8=",
       "views": 980,
       "createdAt": "22.12.2022",
       "userId": "2",
@@ -252,6 +252,202 @@
           "id": "25",
           "type": "CODE",
           "code": "// Placeholder for future space exploration code examples"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "New IT Trends in 2023",
+      "subtitle": "Exploring the latest advancements in the IT industry",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR_BXjhk086WJJf5xwo9Zl2Z5puaY4X3eHyOa0v-EdEQ&s",
+      "views": 850,
+      "createdAt": "01.08.2023",
+      "userId": "1",
+      "type": ["IT"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction",
+          "paragraphs": [
+            "The world of information technology is rapidly evolving, and 2023 has brought forth some exciting trends and innovations.",
+            "In this article, we will explore the cutting-edge technologies and breakthroughs that are shaping the IT landscape."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "console.log('Welcome to the future of IT!');"
+        },
+        {
+          "id": "5",
+          "type": "TEXT",
+          "paragraphs": [
+            "From AI-powered applications to quantum computing, the IT industry is witnessing a revolution.",
+            "Join us on this journey as we delve into the latest developments and their potential impact on businesses and society."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://example.com/it-trend-image.png",
+          "title": "Image: AI and Automation"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "The Future of Space Exploration",
+      "subtitle": "Advancements in Space Technology",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0um4-Ji32aGf1jrClxyILtCvcOhF7DPxK03eGikzCcmeqTr1JUujiPYkwbLWKwcBxqt4&usqp=CAU",
+      "views": 1200,
+      "createdAt": "15.07.2023",
+      "userId": "1",
+      "type": ["SCIENCE"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "paragraphs": [
+            "Humanity's quest to explore the cosmos has taken significant leaps in 2023.",
+            "In this article, we will highlight the breakthroughs in space technology and missions that are redefining our understanding of the universe."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "const spaceStation = new SpaceStation();\nspaceStation.launch();"
+        },
+        {
+          "id": "5",
+          "type": "TEXT",
+          "paragraphs": [
+            "From private space tourism to missions to distant planets, space exploration is becoming more accessible and ambitious.",
+            "Join us as we delve into the exciting discoveries and upcoming projects that hold the promise of a new era in space exploration."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://example.com/space-exploration-image.png",
+          "title": "Image: A Journey to Mars"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "The Rise of NFTs in the Art World",
+      "subtitle": "Exploring the Impact of Non-Fungible Tokens",
+      "img": "https://miro.medium.com/v2/resize:fit:1400/1*R2Qg-Q0nI2DkQ-meXe7VaA.jpeg",
+      "views": 650,
+      "createdAt": "03.06.2023",
+      "userId": "1",
+      "type": ["ART"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "paragraphs": [
+            "Non-fungible tokens (NFTs) have taken the art world by storm in 2023.",
+            "In this article, we will dive into the concept of NFTs, their influence on the art market, and the challenges they pose to traditional art ownership and copyright."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "const nftArtwork = new NFTArtwork();\nnftArtwork.display();"
+        },
+        {
+          "id": "5",
+          "type": "TEXT",
+          "paragraphs": [
+            "From record-breaking sales to digital art revolution, NFTs have brought a paradigm shift in how we perceive and value art.",
+            "Join us as we analyze the pros and cons of this digital art movement and its potential impact on artists and collectors."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://example.com/nft-artwork-image.png",
+          "title": "Image: The World of Digital Art"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "The Future of Sustainable Energy",
+      "subtitle": "Innovations in Renewable Energy Sources",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlKaJXFZjdOE06ujENLIXEDV7AdV1QZrtASw&usqp=CAU",
+      "views": 850,
+      "createdAt": "18.04.2023",
+      "userId": "1",
+      "type": ["SCIENCE", "ENVIRONMENT"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "paragraphs": [
+            "The global push for sustainable energy solutions has reached new heights in 2023.",
+            "In this article, we will explore the latest advancements in renewable energy sources and their potential to mitigate climate change."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "const solarPanel = new SolarPanel();\nsolarPanel.generateEnergy();"
+        },
+        {
+          "id": "5",
+          "type": "TEXT",
+          "paragraphs": [
+            "From solar farms to wind turbines, clean energy technologies are reshaping the energy landscape.",
+            "Join us as we discuss the challenges and opportunities in transitioning towards a sustainable and greener future."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://example.com/sustainable-energy-image.png",
+          "title": "Image: Solar Power Generation"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "ChatGPT: The Future of Conversational AI",
+      "subtitle": "An In-Depth Look at OpenAI's Language Model",
+      "img": "https://www.aimlmag.com/wp-content/uploads/2023/07/images-36-720x415.jpeg",
+      "views": 2000,
+      "createdAt": "12.11.2023",
+      "userId": "1",
+      "type": ["IT", "ARTIFICIAL_INTELLIGENCE"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "paragraphs": [
+            "ChatGPT is a cutting-edge language model developed by OpenAI.",
+            "In this article, we will explore the capabilities of ChatGPT, its underlying technology, and the impact it has had on various industries."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://example.com/chatgpt-demo-image.png",
+          "title": "Image: ChatGPT in Action"
+        },
+        {
+          "id": "5",
+          "type": "TEXT",
+          "paragraphs": [
+            "As a powerful natural language processing tool, ChatGPT has found applications in customer service, content generation, and even creative writing.",
+            "Join us as we delve into the advancements in conversational AI and the potential of ChatGPT to revolutionize how we interact with machines."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "const chatGPT = new ChatGPT();\nchatGPT.generateResponse();"
         }
       ]
     }
@@ -444,7 +640,7 @@
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJVYPKeVtePD_EBMxjXzoHk__89HDRTpghMQ&usqp=CAU"
     },
     {
       "id": "2",
@@ -464,8 +660,8 @@
       "country": "Russia",
       "city": "Russia",
       "username": "admin213",
-      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200",
-      "firstname": "Anton "
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJVYPKeVtePD_EBMxjXzoHk__89HDRTpghMQ&usqp=CAU",
+      "firstname": "Anton"
     },
     {
       "id": "2",
