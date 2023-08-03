@@ -9,15 +9,9 @@ import { useCallback } from 'react';
 import { Page } from 'shared/ui/Page/Page';
 import { fetchNextArticlesPage } from 'pages/Articles/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { Text } from 'shared/ui/Text/Text';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { initArticlesPage } from 'pages/Articles/model/services/initArticlesPage/initArticlesPage';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/ArticlesPageSlice';
-import {
-  getArticlesError,
-  getArticlesHasMore,
-  getArticlesIsLoading,
-  getArticlesPage,
-  getArticlesView,
-} from '../../model/selectors/articlesPageSelectors';
+import { getArticlesError, getArticlesIsLoading, getArticlesView } from '../../model/selectors/articlesPageSelectors';
 
 interface Props {
   className?: string
@@ -37,8 +31,7 @@ const ArticlesPage = ({ className }: Props) => {
   const articles = useSelector(getArticles.selectAll)
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState())
-    dispatch(fetchArticlesList({ page: 1 }))
+    dispatch(initArticlesPage())
   })
 
   const onChangeView = useCallback((view: ArticleView) => {
@@ -51,7 +44,7 @@ const ArticlesPage = ({ className }: Props) => {
 
   if (error) {
     return (
-      <DynamicModuleLoader reducers={reducers}>
+      <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
         <Page
           onScrollEnd={onLoadNextPart}
           className={classNames('', {}, [className])}
@@ -63,7 +56,7 @@ const ArticlesPage = ({ className }: Props) => {
   }
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page
         onScrollEnd={onLoadNextPart}
         className={classNames('', {}, [className])}
