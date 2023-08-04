@@ -6,7 +6,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ArticleList, ArticleView, ArticleViewSelector } from 'entities/Article';
 import { useCallback } from 'react';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { fetchNextArticlesPage } from 'pages/Articles/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { Text } from 'shared/ui/Text/Text';
 import { initArticlesPage } from 'pages/Articles/model/services/initArticlesPage/initArticlesPage';

@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { AddCommentForm } from 'features/addCommentForm';
 import { useCallback } from 'react';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleCommentsError, getArticleCommentsIsLoading } from '../model/selectors/comments';
