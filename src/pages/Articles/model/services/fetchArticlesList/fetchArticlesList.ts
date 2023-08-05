@@ -25,7 +25,7 @@ export const fetchArticlesList = createAsyncThunk<
   FetchArticlesListProps,
   ThunkConfig<string>
 >(
-  'articlesPage/fetchArticlesList',
+  'articlesPage/fetchArticleRecommendations',
   async (_, thunkAPI) => {
     const {
       rejectWithValue,

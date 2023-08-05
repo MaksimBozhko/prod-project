@@ -18,3 +18,20 @@
 .content-page {
   display: flex;
 }
+
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+
+/* Стили для ползунка скролл-бара */
+*::-webkit-scrollbar-thumb {
+  background-color: var(--inverted-primary-color); /* Цвет ползунка */
+  border-radius: 20px; /* Скругление углов */
+  border: 2px solid var(--primary-color);
+}
+
+/* Стили для трека (фоновой области скролл-бара) */
+*::-webkit-scrollbar-track {
+  background-color: var(--card-bg); /* Цвет трека */
+}

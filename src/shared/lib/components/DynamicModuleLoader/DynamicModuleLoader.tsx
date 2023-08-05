@@ -1,11 +1,11 @@
 import { ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
-import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
+import { ReduxStoreWithManager, StateSchema } from 'app/providers/StoreProvider';
 import { StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema';
 import { Reducer } from '@reduxjs/toolkit';
 
 export type ReducerList = {
-  [name in StateSchemaKey]?: Reducer
+  [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>
 }
 
 interface DynamicModuleLoaderProps {
@@ -38,7 +38,6 @@ export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
     })
 
     return () => {
-      console.log('removeAfterUnmount', removeAfterUnmount)
       if (removeAfterUnmount) {
         Object.entries(reducers).forEach(([name]) => {
           store.reducerManager.remove(name as StateSchemaKey)
