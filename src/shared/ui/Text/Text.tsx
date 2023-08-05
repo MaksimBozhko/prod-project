@@ -15,6 +15,7 @@ export enum TextSize {
 
 export enum ThemeText {
   PRIMARY = 'primary',
+  INVERTED = 'inverted',
   ERROR = 'error'
 }
 

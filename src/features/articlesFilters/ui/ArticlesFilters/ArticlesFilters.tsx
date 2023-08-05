@@ -11,6 +11,9 @@ import { Card } from 'shared/ui/Card/Card';
 import { articlesPageActions } from 'pages/Articles/model/slices/ArticlesPageSlice';
 import { fetchArticlesList } from 'pages/Articles';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
+import { Icon } from 'shared/ui/Icon/Icon';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { ArticleSortSelector } from '../ArticleSortSelector/ArticleSortSelector';
 import { ArticleTypeTabs } from '../ArticleTypeTabs/ArticleTypeTabs';
 import {
@@ -23,6 +26,7 @@ import {
 import { articlesFiltersActions, articlesFiltersReducer } from '../../model/slice/ArticlesFiltersSlice';
 import cls from './ArticlesFilters.module.scss'
 import { ArticleSortField } from '../../model/types/articlesFiltersSchema';
+import PlusIcon from '../../../../shared/assets/icons/plus-icon.svg'
 
 interface ArticlesFiltersProps {
   className?: string
@@ -82,7 +86,12 @@ export const ArticlesFilters = memo(({ className }: ArticlesFiltersProps) => {
             onOrderChange={onChangeOrder}
             onSortChange={onChangeSort}
           />
-          <ArticleViewSelector view={view} onViewClick={onChangeView} />
+          <div className={cls.iconBlock}>
+            <AppLink to={RoutePath.articles_create}>
+              <Icon className={cls.plusIcon} Svg={PlusIcon} />
+            </AppLink>
+            <ArticleViewSelector className={cls.viewSelector} view={view} onViewClick={onChangeView} />
+          </div>
         </div>
         <Card>
           <Input

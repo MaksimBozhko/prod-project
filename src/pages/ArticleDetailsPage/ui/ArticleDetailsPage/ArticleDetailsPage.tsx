@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { ArticleDetails, ArticleList } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { Text, TextSize } from 'shared/ui/Text/Text';
-import { CommentList } from 'entities/Comment/ui/CommentList/CommentList';
+import { CommentList } from 'entities/Comment';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useDispatch, useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
@@ -12,16 +12,15 @@ import { useCallback } from 'react';
 import { Page } from 'widgets/Page/Page';
 import {
   fetchArticleRecommendations,
-} from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
-import {
-  getArticleRecommendations,
-} from 'pages/ArticleDetailsPage/model/slices/ArticleDetailsPageRecommendationsSlice';
-import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices';
-import { getArticleRecommendationsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/recommendations';
-import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
-import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { getArticleCommentsError, getArticleCommentsIsLoading } from '../model/selectors/comments';
-import { getArticleComments } from '../model/slices/ArticleDetailsCommentsSlice';
+} from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { getArticleRecommendations } from '../../model/slices/ArticleDetailsPageRecommendationsSlice';
+import { articleDetailsPageReducer } from '../../model/slices';
+import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { getArticleCommentsError, getArticleCommentsIsLoading } from '../../model/selectors/comments';
+import { getArticleComments } from '../../model/slices/ArticleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss'
 
 interface ArticleDetailsProps {
@@ -62,6 +61,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsProps) => {
   return (
     <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
       <Page className={classNames('', {}, [className])}>
+        <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
         <Text
           size={TextSize.L}

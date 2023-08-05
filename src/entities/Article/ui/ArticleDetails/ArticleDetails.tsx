@@ -8,7 +8,6 @@ import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { GoBackBtn } from 'shared/ui/GoBackButton/GoBackBtn';
 import EyeIcon from 'shared/assets/icons/eye.svg'
 import CalendarIcon from 'shared/assets/icons/calendar.svg'
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
@@ -129,7 +128,6 @@ export const ArticleDetails = (props: ArticleDetailsProps) => {
   return (
     <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
       <div className={classNames(cls.ArticleDetails, {}, [className])}>
-        <GoBackBtn>{t('Вернуться назад')}</GoBackBtn>
         {content}
       </div>
     </DynamicModuleLoader>
