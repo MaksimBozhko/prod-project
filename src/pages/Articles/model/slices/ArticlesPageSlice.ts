@@ -1,7 +1,6 @@
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Article, ArticleView } from 'entities/Article';
-import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
+import { Article } from 'entities/Article';
 import { ArticlesPageSchema } from '../types/ArticlesPageSchema';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 
@@ -20,36 +19,34 @@ const articlesPageSlice = createSlice({
     isLoading: false,
     ids: [],
     entities: {},
-    view: ArticleView.SMALL,
     page: 1,
     hasMore: true,
-    _inited: false,
   }),
   reducers: {
-    setView: (state, { payload }: PayloadAction<ArticleView>) => {
-      state.view = payload
-      localStorage.setItem(ARTICLES_VIEW_LOCALSTORAGE_KEY, payload)
-    },
-    initState: (state) => {
-      const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView
-      state.view = view
-      state.limit = view === ArticleView.BIG ? 4 : 9
-      state._inited = true
-    },
     setPage: (state, { payload }: PayloadAction<number>) => {
       state.page = payload
     },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchArticlesList.fulfilled, (state, { payload }: PayloadAction<Article[]>) => {
+      .addCase(fetchArticlesList.fulfilled, (
+        state,
+        { payload, meta },
+      ) => {
         state.isLoading = false
-        articlesAdapter.addMany(state, payload)
-        state.hasMore = payload.length > 0
+        state.hasMore = payload.data.length >= payload.limit
+        if (meta.arg.replace) {
+          articlesAdapter.setAll(state, payload.data)
+        } else {
+          articlesAdapter.addMany(state, payload.data)
+        }
       })
-      .addCase(fetchArticlesList.pending, (state) => {
+      .addCase(fetchArticlesList.pending, (state, { meta }) => {
         state.isLoading = true
         state.error = undefined
+        if (meta.arg.replace) {
+          articlesAdapter.removeAll(state)
+        }
       })
       .addCase(fetchArticlesList.rejected, (state, { payload }) => {
         state.isLoading = false

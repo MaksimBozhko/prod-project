@@ -15,10 +15,10 @@ const options = [
   { value: Currency.RUB, content: Currency.RUB },
   { value: Currency.EUR, content: Currency.EUR },
   { value: Currency.USD, content: Currency.USD },
-];
+]
 
 export const CurrencySelect = memo(({
-  className, value, onChange, readonly,
+  className, value = Currency.EUR, onChange, readonly,
 }: CurrencySelectProps) => {
   const { t } = useTranslation();
 
@@ -27,7 +27,7 @@ export const CurrencySelect = memo(({
   }, [onChange]);
 
   return (
-    <Select
+    <Select<Currency>
       className={classNames('', {}, [className])}
       label={t('Укажите валюту')}
       options={options}

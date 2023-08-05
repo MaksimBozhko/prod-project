@@ -20,7 +20,7 @@ const options = [
 ];
 
 export const CountrySelect = memo(({
-  className, value, onChange, readonly,
+  className, value = Country.Belarus, onChange, readonly,
 }: CountrySelectProps) => {
   const { t } = useTranslation();
 
@@ -29,7 +29,7 @@ export const CountrySelect = memo(({
   }, [onChange]);
 
   return (
-    <Select
+    <Select<Country>
       className={classNames('', {}, [className])}
       label={t('Укажите страну')}
       options={options}
