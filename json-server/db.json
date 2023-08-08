@@ -20,7 +20,9 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -89,7 +91,9 @@
       "views": 850,
       "createdAt": "15.05.2022",
       "userId": "1",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "10",
@@ -131,7 +135,9 @@
       "views": 1200,
       "createdAt": "10.09.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "14",
@@ -171,7 +177,9 @@
       "views": 620,
       "createdAt": "03.11.2022",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "18",
@@ -211,7 +219,9 @@
       "views": 980,
       "createdAt": "22.12.2022",
       "userId": "2",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "22",
@@ -251,7 +261,9 @@
       "views": 850,
       "createdAt": "01.08.2023",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -291,7 +303,9 @@
       "views": 1200,
       "createdAt": "15.07.2023",
       "userId": "1",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -330,7 +344,9 @@
       "views": 650,
       "createdAt": "03.06.2023",
       "userId": "1",
-      "type": ["ART"],
+      "type": [
+        "ART"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -369,7 +385,9 @@
       "views": 850,
       "createdAt": "18.04.2023",
       "userId": "1",
-      "type": ["ENVIRONMENT"],
+      "type": [
+        "ENVIRONMENT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -408,7 +426,9 @@
       "views": 2000,
       "createdAt": "12.11.2023",
       "userId": "1",
-      "type": ["ARTIFICIAL_INTELLIGENCE"],
+      "type": [
+        "ARTIFICIAL_INTELLIGENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -642,8 +662,8 @@
     {
       "id": "1",
       "first": "jgh",
-      "lastname": "Antonov",
-      "age": 45,
+      "lastname": "Antonov12",
+      "age": 451,
       "currency": "RUB",
       "country": "Russia",
       "city": "Russia",
