@@ -2,7 +2,7 @@ import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { fetchNextArticlesPage } from './fetchNextArticlesPage';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 
-jest.mock('../fetchArticleRecommendations/fetchArticleRecommendations')
+jest.mock('../fetchArticlesList/fetchArticlesList');
 
 describe('fetchNextArticlesPage.test', () => {
   test('success', async () => {
@@ -11,46 +11,30 @@ describe('fetchNextArticlesPage.test', () => {
         page: 2,
         ids: [],
         entities: {},
-        hasMore: true,
         isLoading: false,
+        hasMore: true,
       },
-    })
+    });
 
-    await thunk.callThunk()
+    await thunk.callThunk();
 
-    expect(thunk.dispatch).toBeCalledTimes(4)
-    expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 })
-  })
-  test('fetchArticleRecommendations not called', async () => {
+    expect(thunk.dispatch).toBeCalledTimes(4);
+    expect(fetchArticlesList).toHaveBeenCalledWith({});
+  });
+  test('fetchAritcleList not called', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
       articlesPage: {
         page: 2,
         ids: [],
         entities: {},
+        isLoading: false,
         hasMore: false,
-        isLoading: false,
       },
-    })
+    });
 
-    await thunk.callThunk()
+    await thunk.callThunk();
 
-    expect(thunk.dispatch).toBeCalledTimes(2)
-    expect(fetchArticlesList).not.toHaveBeenCalledWith()
-  })
-  test('fetchArticleRecommendations not called isLoading', async () => {
-    const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-      articlesPage: {
-        page: 2,
-        ids: [],
-        entities: {},
-        hasMore: true,
-        isLoading: true,
-      },
-    })
-
-    await thunk.callThunk()
-
-    expect(thunk.dispatch).toBeCalledTimes(2)
-    expect(fetchArticlesList).not.toHaveBeenCalledWith()
-  })
-})
+    expect(thunk.dispatch).toBeCalledTimes(2);
+    expect(fetchArticlesList).not.toHaveBeenCalled();
+  });
+});

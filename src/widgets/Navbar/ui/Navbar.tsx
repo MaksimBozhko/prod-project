@@ -4,6 +4,7 @@ import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
+import { Text, ThemeText } from 'shared/ui/Text/Text';
 import classNames from 'shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
 
@@ -32,6 +33,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   if (authData) {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
+        <Text
+          className={cls.appName}
+          title={t('Ulbi TV App')}
+          theme={ThemeText.INVERTED}
+        />
         <Button
           theme={ThemeButton.CLEAR_INVERTED}
           className={cls.links}
@@ -44,7 +50,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }
 
   return (
-    <div className={classNames(cls.Navbar, {}, [className])}>
+    <header className={classNames(cls.Navbar, {}, [className])}>
       <Button
         theme={ThemeButton.CLEAR_INVERTED}
         className={cls.links}
@@ -58,6 +64,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           onClose={onCloseModal}
         />
       )}
-    </div>
+    </header>
   );
 });
