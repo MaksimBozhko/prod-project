@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
 import { Text, ThemeText } from 'shared/ui/Text/Text';
 import classNames from 'shared/lib/classNames/classNames';
+import { LoginModal } from 'features/AuthByUserName';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -16,6 +17,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
   const dispatch = useDispatch();
+
+  const onCloseModal = useCallback(() => {
+    setIsAuthModal(false);
+  }, []);
 
   const onShowModal = useCallback(() => {
     setIsAuthModal(true);
@@ -53,6 +58,12 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       >
         {t('Войти')}
       </Button>
+      { isAuthModal && (
+        <LoginModal
+          isOpen={isAuthModal}
+          onClose={onCloseModal}
+        />
+      )}
     </header>
   );
 });

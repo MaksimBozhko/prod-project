@@ -1,13 +1,10 @@
 import classNames from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
-import React, {
-  memo, useCallback, useMemo, useState,
-} from 'react';
+import React, { memo, useMemo, useState } from 'react';
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
 import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button';
 import { SidebarItem } from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
 import { useSelector } from 'react-redux';
-import { LoginModal } from 'features/AuthByUserName';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems/getSidebarItems';
 import cls from './Sidebar.module.scss';
 
@@ -29,12 +26,6 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       key={item.path}
     />
   )), [collapsed, sidebarItemsList]);
-
-  const [isAuthModal, setIsAuthModal] = useState(true);
-
-  const onCloseModal = useCallback(() => {
-    setIsAuthModal(false);
-  }, []);
 
   return (
     <menu
@@ -62,12 +53,6 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
           className={cls.lang}
         />
       </div>
-      { isAuthModal && (
-        <LoginModal
-          isOpen={isAuthModal}
-          onClose={onCloseModal}
-        />
-      )}
     </menu>
   );
 })
