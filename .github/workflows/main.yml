@@ -1,7 +1,7 @@
 name: linting, testing, building
 on:
   push:
-    branches: [ master ]
+    branches: [ master, fix_build ]
   pull_request:
     branches: [ master ]
 jobs:
