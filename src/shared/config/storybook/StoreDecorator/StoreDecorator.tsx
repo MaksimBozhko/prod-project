@@ -1,6 +1,5 @@
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
-import { loginReducer } from 'features/AuthByUsername';
 import { profileReducer } from 'entities/Profile';
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
 import { addCommentFormReducer } from 'features/addCommentForm/model/slice/addCommentFormSlice';
@@ -8,7 +7,6 @@ import { ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicMo
 import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices';
 
 const defaultAsyncReducers: ReducerList = {
-  loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
   addCommentForm: addCommentFormReducer,
