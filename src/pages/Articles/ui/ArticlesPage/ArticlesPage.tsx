@@ -24,8 +24,8 @@ const reducers: ReducerList = {
   articlesPage: articlesPageReducer,
 }
 
-const ArticlesPage = ({className}: Props) => {
-  const {t} = useTranslation('article')
+const ArticlesPage = ({ className }: Props) => {
+  const { t } = useTranslation('article')
 
   const dispatch = useAppDispatch()
   const isLoading = useSelector(getArticlesIsLoading)
@@ -49,7 +49,7 @@ const ArticlesPage = ({className}: Props) => {
           onScrollEnd={onLoadNextPart}
           className={classNames('', {}, [className])}
         >
-          <Text title={t('Произошла ошибка при загрузке статей')} text={t('Попробуйте позже)')}/>
+          <Text title={t('Произошла ошибка при загрузке статей')} text={t('Попробуйте позже)')} />
         </Page>
       </DynamicModuleLoader>
     )
@@ -61,7 +61,7 @@ const ArticlesPage = ({className}: Props) => {
         onScrollEnd={onLoadNextPart}
         className={classNames('', {}, [className])}
       >
-        <ArticlesFilters/>
+        <ArticlesFilters />
         <ArticleList
           isLoading={isLoading}
           view={view}
