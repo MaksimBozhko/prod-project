@@ -8,7 +8,7 @@ import { getProfileReadonly } from 'entities/Profile/model/selectors/getProfileR
 import { useCallback } from 'react';
 import { profileActions, updateProfileData } from 'entities/Profile';
 import { getIsProfilePageCanEdit } from 'pages/ProfilePage/model/selectors/getProfilePageCanEdit/getProfilePageCanEdit';
-import cls from './ProfilePageHeader.module.scss'
+import { HStack } from 'shared/ui/Stack';
 
 interface ProfilePageHeaderProps {
   className?: string
@@ -34,40 +34,37 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   }, [dispatch])
 
   return (
-    <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+    <HStack max justify="between" className={classNames('', {}, [className])}>
       <Text title={t('Профиль')} />
       {isCanEdit && (
-        <div className={cls.btnsWrapper}>
+        <div>
           {readonly
             ? (
               <Button
                 theme={ThemeButton.OUTLINE}
-                className={cls.editBtn}
                 onClick={onEdit}
               >
                 {t('Редактировать')}
               </Button>
             )
             : (
-              <>
+              <HStack gap="8">
                 <Button
                   theme={ThemeButton.OUTLINE_RED}
-                  className={cls.editBtn}
                   onClick={onCancelEdit}
                 >
                   {t('Отменить')}
                 </Button>
                 <Button
                   theme={ThemeButton.OUTLINE}
-                  className={cls.saveBtn}
                   onClick={onSave}
                 >
                   {t('Сохранить')}
                 </Button>
-              </>
+              </HStack>
             )}
         </div>
       )}
-    </div>
+    </HStack>
   )
 }
