@@ -10,6 +10,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { AddCommentForm } from 'features/addCommentForm';
 import { useCallback } from 'react';
 import { Page } from 'widgets/Page/Page';
+import { VStack } from 'shared/ui/Stack';
 import {
   fetchArticleRecommendations,
 } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
@@ -22,7 +23,6 @@ import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByAr
 import { getArticleCommentsError, getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { getArticleComments } from '../../model/slices/ArticleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss'
-import { VStack } from 'shared/ui/Stack';
 
 interface ArticleDetailsProps {
   className?: string
@@ -62,7 +62,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsProps) => {
   return (
     <DynamicModuleLoader reducers={reducer} removeAfterUnmount>
       <Page className={classNames('', {}, [className])}>
-        <VStack gap={'16'} max>
+        <VStack gap="16" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
           <Text

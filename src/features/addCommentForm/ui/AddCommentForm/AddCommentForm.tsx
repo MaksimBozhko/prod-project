@@ -6,10 +6,10 @@ import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { HStack } from 'shared/ui/Stack';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice';
 import { getAddCommentsFormError, getAddCommentsFormText } from '../../model/selectors/addCommentsFormSelectors';
 import cls from './AddCommentForm.module.scss'
-import { HStack } from 'shared/ui/Stack';
 
 export interface AddCommentFormProps {
   className?: string
@@ -37,7 +37,7 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
 
   return (
     <DynamicModuleLoader reducers={reducer}>
-      <HStack justify={'between'} max className={classNames(cls.AddCommentForm, {}, [className])}>
+      <HStack justify="between" max className={classNames(cls.AddCommentForm, {}, [className])}>
         <Input
           className={cls.input}
           value={text}

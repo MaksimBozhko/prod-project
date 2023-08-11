@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next'
 import { memo } from 'react'
 import { Comment } from 'entities/Comment';
 import { Text, TextAlign, ThemeText } from 'shared/ui/Text/Text';
-import { CommentCard } from '../CommentCard/CommentCard';
 import { VStack } from 'shared/ui/Stack';
+import { CommentCard } from '../CommentCard/CommentCard';
 
 interface CommentListProps {
   className?: string
@@ -29,7 +29,7 @@ export const CommentList = memo((props: CommentListProps) => {
 
   if (isLoading) {
     return (
-      <VStack gap={'16'} className={classNames('', {}, [className])}>
+      <VStack gap="16" className={classNames('', {}, [className])}>
         <CommentCard isLoading />
         <CommentCard isLoading />
         <CommentCard isLoading />
@@ -38,7 +38,7 @@ export const CommentList = memo((props: CommentListProps) => {
   }
 
   return (
-    <VStack gap={'16'} max className={classNames('', {}, [className])}>
+    <VStack gap="16" max className={classNames('', {}, [className])}>
       {comments?.length
         ? comments.map((comment) => (
           <CommentCard
