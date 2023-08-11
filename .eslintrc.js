@@ -40,10 +40,15 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'max-len': ['error', { code: 120, tabWidth: 2, ignoreComments: true }],
-    'i18next/no-literal-string': ['warning', {
-      markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to', 'target', 'column', 'row', 'start', 'center', 'end', 'between'],
-    }],
+    'i18next/no-literal-string': [
+      'error',
+      {
+        markupOnly: true,
+        ignoreAttribute: [
+          'data-testid', 'to', 'target', 'column', 'direction', 'max', 'gap', 'align', 'justify', 'role',
+        ],
+      },
+    ],
     semi: 'off',
     'arrow-body-style': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',

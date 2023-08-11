@@ -1,6 +1,6 @@
 import classNames from 'shared/lib/classNames/classNames'
 import {
-  memo, MutableRefObject, ReactNode, useRef, UIEvent,
+  memo, MutableRefObject, ReactNode, UIEvent, useRef,
 } from 'react'
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -40,13 +40,13 @@ export const Page = memo(({ className, children, onScrollEnd }: PageProps) => {
     callback: onScrollEnd,
   })
   return (
-    <section
+    <main
       ref={wrapperRef}
       onScroll={onScrollHandler}
       className={classNames(cls.Page, {}, [className])}
     >
       {children}
       <div ref={triggerRef} />
-    </section>
+    </main>
   )
 })
