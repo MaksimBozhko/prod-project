@@ -21,7 +21,8 @@
     "storybook:build": "build-storybook -c ./config/storybook",
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
-    "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html"
+    "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
+    "generator:slice": "node scripts/createSlice/index.js"
   },
   "keywords": [],
   "author": "",
