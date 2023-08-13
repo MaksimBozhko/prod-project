@@ -6,6 +6,9 @@ import { getUserAuthData, userActions } from 'entities/User';
 import { Text, ThemeText } from 'shared/ui/Text/Text';
 import classNames from 'shared/lib/classNames/classNames';
 import { LoginModal } from 'features/AuthByUserName';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -38,13 +41,22 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           title={t('Ulbi TV App')}
           theme={ThemeText.INVERTED}
         />
-        <Button
-          theme={ThemeButton.CLEAR_INVERTED}
-          className={cls.links}
-          onClick={onLogout}
-        >
-          {t('Выйти')}
-        </Button>
+
+        <Dropdown
+          className={cls.dropdown}
+          items={[
+            {
+              content: t('Профиль'),
+              href: RoutePath.profile + authData.id,
+            },
+            {
+              content: t('Выйти'),
+              onClick: onLogout,
+            },
+          ]}
+          trigger={<Avatar size={30} src={authData.avatar} />}
+          direction="bottom left"
+        />
       </header>
     );
   }
