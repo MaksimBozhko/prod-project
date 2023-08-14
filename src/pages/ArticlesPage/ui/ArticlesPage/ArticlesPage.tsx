@@ -10,6 +10,7 @@ import { ArticleInfiniteList } from '../../ui/ArticleInfiniteList/ArticleInfinit
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { articlesPageReducer } from '../../model/slices/ArticlesPageSlice';
+import cls from './ArticlesPage.module.scss'
 
 interface Props {
   className?: string
@@ -37,7 +38,7 @@ const ArticlesPage = ({ className }: Props) => {
         onScrollEnd={onLoadNextPart}
         className={classNames('', {}, [className])}
       >
-        <ArticlesFilters />
+        <ArticlesFilters className={cls.filters} />
         <ArticleInfiniteList />
       </Page>
     </DynamicModuleLoader>
