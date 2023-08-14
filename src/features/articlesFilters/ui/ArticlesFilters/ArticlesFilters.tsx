@@ -8,8 +8,8 @@ import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicM
 import { useTranslation } from 'react-i18next';
 import { ArticleType, ArticleView, ArticleViewSelector } from 'entities/Article';
 import { Card } from 'shared/ui/Card/Card';
-import { articlesPageActions } from 'pages/Articles/model/slices/ArticlesPageSlice';
-import { fetchArticlesList } from 'pages/Articles';
+import { articlesPageActions } from 'pages/ArticlesPage/model/slices/ArticlesPageSlice';
+import { fetchArticlesList } from 'pages/ArticlesPage';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { AppLink } from 'shared/ui/AppLink/AppLink';

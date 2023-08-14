@@ -9,7 +9,7 @@ import { AxiosInstance } from 'axios';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
-import { ArticlesPageSchema } from 'pages/Articles';
+import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollSaveSchema } from 'features/scrollSave';
 import { ArticlesFiltersSchema } from 'features/articlesFilters';
 import { rtkApi } from 'shared/api/rtkApi';
