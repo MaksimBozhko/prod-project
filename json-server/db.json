@@ -647,33 +647,35 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJVYPKeVtePD_EBMxjXzoHk__89HDRTpghMQ&usqp=CAU"
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJVYPKeVtePD_EBMxjXzoHk__89HDRTpghMQ&usqp=CAU",
+      "roles": [
+        "ADMIN"
+      ]
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
-      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg",
+      "roles": [
+        "USER"
+      ]
     }
   ],
   "profile": [
     {
       "id": "1",
-      "first": "jgh",
-      "lastname": "Antonov12",
+      "lastname": "Bozhko",
       "age": 42,
       "currency": "RUB",
       "country": "Kazahstan",
       "city": "Russiaa",
       "username": "admin213",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJVYPKeVtePD_EBMxjXzoHk__89HDRTpghMQ&usqp=CAU",
-      "firstname": "Anton"
+      "firstname": "Maksimnn"
     },
     {
       "id": "2",
-      "first": "vfg",
       "lastname": "Bozhko",
       "age": 20,
       "currency": "USD",

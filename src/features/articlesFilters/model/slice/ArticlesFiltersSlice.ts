@@ -8,7 +8,7 @@ const initialState: ArticlesFiltersSchema = {
   search: '',
   sort: ArticleSortField.CREATED,
   order: 'asc',
-  view: ArticleView.SMALL,
+  view: localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView || ArticleView.SMALL,
   type: ArticleType.ALL,
   _inited: false,
 };
@@ -19,7 +19,7 @@ const articlesFiltersSlice = createSlice({
   reducers: {
     initState: (state) => {
       const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView
-      state.view = view
+      // state.view = view
       state.limit = view === ArticleView.BIG ? 4 : 10
       state._inited = true
     },

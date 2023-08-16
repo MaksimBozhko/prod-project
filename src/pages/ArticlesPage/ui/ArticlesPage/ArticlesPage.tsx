@@ -1,7 +1,8 @@
 import classNames from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useCallback } from 'react';
+// @ts-ignore
+import { useCallback, useEffect } from 'react';
 import { Page } from 'widgets/Page/Page';
 import { ArticlesFilters } from 'features/articlesFilters';
 import { useSearchParams } from 'react-router-dom'
