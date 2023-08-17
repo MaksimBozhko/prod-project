@@ -26,7 +26,7 @@ import {
 
 interface ArticleDetailsProps {
   className?: string
-  id: string
+  id?: string
 }
 
 const reducer: ReducerList = {

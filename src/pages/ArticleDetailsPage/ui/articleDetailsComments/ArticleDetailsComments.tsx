@@ -14,7 +14,7 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 
 interface ArticleDetailsCommentsProps {
   className?: string
-  id: string
+  id?: string
 }
 
 export const ArticleDetailsComments = memo(({ className, id }: ArticleDetailsCommentsProps) => {
@@ -29,7 +29,7 @@ export const ArticleDetailsComments = memo(({ className, id }: ArticleDetailsCom
     dispatch(fetchCommentsByArticleId(id))
   })
 
-  const onSendComment = useCallback((text) => {
+  const onSendComment = useCallback((text: string) => {
     dispatch(addCommentForArticle(text))
   }, [dispatch])
 

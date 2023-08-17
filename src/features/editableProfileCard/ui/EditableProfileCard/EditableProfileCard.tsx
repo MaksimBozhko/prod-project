@@ -26,7 +26,7 @@ const reducers: ReducerList = {
 
 interface EditableProfileCardProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
@@ -49,9 +49,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
   const validateErrors = useSelector(getProfileValidateError)
 
   useInitialEffect(() => {
-    if (id) {
-      dispatch(fetchProfileData(id))
-    }
+    dispatch(fetchProfileData(id))
   })
 
   const onChangeFirstName = useCallback((value?: string) => {
