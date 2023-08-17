@@ -646,6 +646,12 @@
       "userId": "1",
       "text": "dfv",
       "id": "CpTA5rx"
+    },
+    {
+      "articleId": "6",
+      "userId": "1",
+      "text": "r",
+      "id": "ZTnGFPu"
     }
   ],
   "users": [
@@ -672,7 +678,7 @@
     {
       "id": "1",
       "lastname": "Bozhko",
-      "age": 42,
+      "age": 421,
       "currency": "RUB",
       "country": "Kazahstan",
       "city": "Russiaa",

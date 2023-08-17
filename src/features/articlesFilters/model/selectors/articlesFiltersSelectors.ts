@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { ArticleSortField } from 'features/articlesFilters';
 import { ArticleType, ArticleView } from 'entities/Article';
+import { ArticleSortField } from '../consts/consts';
 
 export const getArticlesFiltersSearch = (state: StateSchema) => state.articlesFilters?.search ?? ''
 export const getArticlesFiltersOrder = (state: StateSchema) => state.articlesFilters?.order ?? 'asc'

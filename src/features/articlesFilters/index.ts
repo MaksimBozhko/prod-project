@@ -5,7 +5,7 @@ export {
   articlesFiltersReducer,
 } from './model/slice/ArticlesFiltersSlice'
 
-export { ArticlesFiltersSchema, ArticleSortField } from './model/types/articlesFiltersSchema'
+export type { ArticlesFiltersSchema } from './model/types/articlesFiltersSchema'
 
 export {
   getArticlesFiltersSearch,
@@ -16,3 +16,4 @@ export {
   getArticlesFiltersLimit,
   getArticlesFiltersType,
 } from './model/selectors/articlesFiltersSelectors'
+export { ArticleSortField } from './model/consts/consts';

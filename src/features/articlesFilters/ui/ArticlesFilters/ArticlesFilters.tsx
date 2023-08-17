@@ -14,6 +14,7 @@ import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { ArticleSortField } from '../../model/consts/consts';
 import { ArticleSortSelector } from '../ArticleSortSelector/ArticleSortSelector';
 import { ArticleTypeTabs } from '../ArticleTypeTabs/ArticleTypeTabs';
 import {
@@ -25,7 +26,6 @@ import {
 } from '../../model/selectors/articlesFiltersSelectors';
 import { articlesFiltersActions, articlesFiltersReducer } from '../../model/slice/ArticlesFiltersSlice';
 import cls from './ArticlesFilters.module.scss'
-import { ArticleSortField } from '../../model/types/articlesFiltersSchema';
 import PlusIcon from '../../../../shared/assets/icons/plus-icon.svg'
 
 interface ArticlesFiltersProps {

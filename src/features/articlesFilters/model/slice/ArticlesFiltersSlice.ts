@@ -2,7 +2,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { SortOrder } from 'shared/types';
 import { ArticleType, ArticleView } from 'entities/Article';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
-import { ArticlesFiltersSchema, ArticleSortField } from '../types/articlesFiltersSchema';
+import { ArticleSortField } from '../consts/consts';
+import { ArticlesFiltersSchema } from '../types/articlesFiltersSchema';
 
 const initialState: ArticlesFiltersSchema = {
   search: '',

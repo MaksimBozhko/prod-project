@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ArticleSortField } from 'features/articlesFilters';
+import { ArticleSortField } from '../../model/consts/consts';
 import { ArticlesFilters } from './ArticlesFilters';
 
 export default {
