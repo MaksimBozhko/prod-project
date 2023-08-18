@@ -3,14 +3,9 @@ import classNames from 'shared/lib/classNames/classNames';
 import { Fragment, ReactNode } from 'react';
 import { DropDownDirection } from 'shared/types/ui';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { mapDirectionsClass } from '../../styles/const';
 import cls from './Dropdown.module.scss'
-
-const mapDirectionsClass: Record<DropDownDirection, string> = {
-  'bottom right': cls.optionsBottomRight,
-  'bottom left': cls.optionsBottomLeft,
-  'top left': cls.optionsTopLeft,
-  'top right': cls.optionsTopRight,
-}
+import popupCls from '../../styles/popup.module.scss'
 
 type DropdownItem = {
   disabled?: boolean
@@ -35,17 +30,17 @@ export function Dropdown(props: DropdownType) {
   } = props
 
   return (
-    <Menu as="div" className={classNames(cls.DropDown, {}, [className])}>
-      <Menu.Button className={cls.btn}>
+    <Menu as="div" className={classNames(cls.DropDown, {}, [className, popupCls.popup])}>
+      <Menu.Button className={popupCls.trigger}>
         {trigger}
       </Menu.Button>
       <Menu.Items className={classNames(cls.menu, {}, [mapDirectionsClass[direction]])}>
-        {items.map((item) => {
+        {items.map((item, index) => {
           const content = ({ active }: { active: boolean }) => (
             <button
               type="button"
               onClick={item.onClick}
-              className={classNames(cls.item, { [cls.active]: active, [cls.disabled]: item.disabled })}
+              className={classNames(cls.item, { [popupCls.active]: active, [popupCls.disabled]: item.disabled })}
             >
               {item.content}
             </button>
@@ -53,14 +48,23 @@ export function Dropdown(props: DropdownType) {
 
           if (item.href) {
             return (
-              <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+              <Menu.Item
+                as={AppLink}
+                to={item.href}
+                disabled={item.disabled}
+                key={`dropdown-key-${index}`}
+              >
                 {content}
               </Menu.Item>
             )
           }
 
           return (
-            <Menu.Item as={Fragment} disabled={item.disabled}>
+            <Menu.Item
+              as={Fragment}
+              disabled={item.disabled}
+              key={`dropdown-key-${index}`}
+            >
               {content}
             </Menu.Item>
           )
