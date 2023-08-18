@@ -1,10 +1,9 @@
 import classNames, { Mods } from 'shared/lib/classNames/classNames';
-import {
-  MouseEvent, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
-} from 'react';
+import { ReactNode } from 'react';
 import { Portal } from 'shared/ui/Portal/Portal';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { Overlay } from 'shared/ui/Overlay/Overlay';
+import { useModal } from 'shared/lib/hooks/useModal/useModal';
 import cls from './Modal.module.scss'
 
 interface ModalProps {
@@ -27,45 +26,16 @@ export const Modal = (
   }: ModalProps,
 ) => {
   const { theme } = useTheme()
-  const [isClosing, setIsClosing] = useState(false)
-  const [isMounted, setIsMounted] = useState(false)
-  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
-  useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true)
-    }
-  }, [isOpen])
-
-  const closeHandler = useCallback(() => {
-    if (onClose) {
-      setIsClosing(true)
-      timerRef.current = setTimeout(() => {
-        onClose()
-        setIsClosing(false)
-      }, ANIMATION_DELAY)
-    }
-  }, [onClose])
-
-  const onContentClick = (e: MouseEvent) => {
-    e.stopPropagation()
-  }
-
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      closeHandler()
-    }
-  }, [closeHandler])
-
-  useEffect(() => {
-    if (isOpen) {
-      window.addEventListener('keydown', onKeyDown)
-    }
-    return () => {
-      clearTimeout(timerRef.current)
-      window.removeEventListener('keydown', onKeyDown)
-    }
-  }, [isOpen, onKeyDown])
+  const {
+    isClosing,
+    isMounted,
+    close,
+  } = useModal({
+    isOpen,
+    onClose,
+    animationDelay: ANIMATION_DELAY,
+  })
 
   const mods: Mods = {
     [cls.opened]: isOpen,
@@ -79,8 +49,8 @@ export const Modal = (
   return (
     <Portal>
       <div className={classNames(cls.Modal, mods, [className, theme, 'app_modal'])}>
-        <Overlay onClick={closeHandler} />
-        <div className={cls.content} onClick={onContentClick}>
+        <Overlay onClick={close} />
+        <div className={cls.content}>
           {children}
         </div>
       </div>
