@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
-import { getUserAuthData, UserRole } from 'entities/User';
 import { Navigate, useLocation } from 'react-router-dom';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { useMemo } from 'react';
-import { ForbiddenPage } from 'pages/ForbiddenPage';
-import { getUserRoles } from 'entities/User/';
+import { getUserAuthData, UserRole } from '@/entities/User';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { ForbiddenPage } from '@/pages/ForbiddenPage';
+import { getUserRoles } from '@/entities/User/';
 
 interface RequireAuthProps {
   roles: UserRole[] | undefined

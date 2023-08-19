@@ -1,9 +1,9 @@
-import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
-import { Sidebar } from 'widgets/Sidebar';
 import { fireEvent, screen } from '@testing-library/react';
 import React from 'react';
-import { Counter } from 'entities/Counter';
 import { userEvent } from '@storybook/testing-library';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
+import { Sidebar } from '@/widgets/Sidebar';
+import { Counter } from '@/entities/Counter';
 
 describe('Counter', () => {
   test('Test only', () => {

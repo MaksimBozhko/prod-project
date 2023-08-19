@@ -10,5 +10,4 @@ export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema'
 
 export { ArticleList } from './ui/ArticleList/ArticleList'
 export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector'
-export { ArticleType } from 'entities/Article/model/consts/articleConsts';
-export { ArticleView } from 'entities/Article/model/consts/articleConsts';
+export { ArticleType, ArticleBlockType, ArticleView } from './model/consts/articleConsts';

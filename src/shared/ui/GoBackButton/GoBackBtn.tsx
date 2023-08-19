@@ -1,8 +1,8 @@
-import classNames from 'shared/lib/classNames/classNames';
 import { useNavigate } from 'react-router-dom';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
-import { Icon } from 'shared/ui/Icon/Icon';
 import { ReactNode } from 'react';
+import classNames from '@/shared/lib/classNames/classNames';
+import { Button, ThemeButton } from '@/shared/ui/Button/Button';
+import { Icon } from '@/shared/ui/Icon/Icon';
 import cls from './GoBackBtn.module.scss'
 import ArrowLeftIcon from '../../assets/icons/arrowleft.svg'
 

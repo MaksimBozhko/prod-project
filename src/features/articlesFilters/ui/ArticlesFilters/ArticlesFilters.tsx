@@ -1,19 +1,19 @@
-import classNames from 'shared/lib/classNames/classNames'
 import { memo, useCallback } from 'react'
-import { Input } from 'shared/ui/Input/Input';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { SortOrder } from 'shared/types';
 import { useSelector } from 'react-redux';
-import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useTranslation } from 'react-i18next';
-import { ArticleType, ArticleView, ArticleViewSelector } from 'entities/Article';
-import { Card } from 'shared/ui/Card/Card';
-import { articlesPageActions } from 'pages/ArticlesPage/model/slices/ArticlesPageSlice';
-import { fetchArticlesList } from 'pages/ArticlesPage';
-import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import classNames from '@/shared/lib/classNames/classNames'
+import { Input } from '@/shared/ui/Input/Input';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { SortOrder } from '@/shared/types';
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { ArticleType, ArticleView, ArticleViewSelector } from '@/entities/Article';
+import { Card } from '@/shared/ui/Card/Card';
+import { articlesPageActions } from '@/pages/ArticlesPage/model/slices/ArticlesPageSlice';
+import { fetchArticlesList } from '@/pages/ArticlesPage';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { AppLink } from '@/shared/ui/AppLink/AppLink';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { ArticleSortField } from '../../model/consts/consts';
 import { ArticleSortSelector } from '../ArticleSortSelector/ArticleSortSelector';
 import { ArticleTypeTabs } from '../ArticleTypeTabs/ArticleTypeTabs';

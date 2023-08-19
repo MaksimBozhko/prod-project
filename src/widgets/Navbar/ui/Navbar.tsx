@@ -1,14 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import React, { memo, useCallback, useState } from 'react';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
-import { Text, ThemeText } from 'shared/ui/Text/Text';
-import classNames from 'shared/lib/classNames/classNames';
-import { LoginModal } from 'features/AuthByUserName';
-import { HStack } from 'shared/ui/Stack';
-import { NotificationButton } from 'features/notificationButton';
-import { AvatarDropDown } from 'features/avatarDropDown';
+import { Button, ThemeButton } from '@/shared/ui/Button/Button';
+import { getUserAuthData } from '@/entities/User';
+import { Text, ThemeText } from '@/shared/ui/Text/Text';
+import classNames from '@/shared/lib/classNames/classNames';
+import { LoginModal } from '@/features/AuthByUserName';
+import { HStack } from '@/shared/ui/Stack';
+import { NotificationButton } from '@/features/notificationButton';
+import { AvatarDropDown } from '@/features/avatarDropDown';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {

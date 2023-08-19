@@ -1,9 +1,9 @@
-import classNames from 'shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import { memo } from 'react'
-import { Comment } from 'entities/Comment';
-import { Text, TextAlign, ThemeText } from 'shared/ui/Text/Text';
-import { VStack } from 'shared/ui/Stack';
+import classNames from '@/shared/lib/classNames/classNames'
+import { Comment } from '@/entities/Comment';
+import { Text, TextAlign, ThemeText } from '@/shared/ui/Text/Text';
+import { VStack } from '@/shared/ui/Stack';
 import { CommentCard } from '../CommentCard/CommentCard';
 
 interface CommentListProps {

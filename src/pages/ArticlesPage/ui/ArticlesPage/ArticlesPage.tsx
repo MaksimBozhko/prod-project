@@ -1,12 +1,12 @@
-import classNames from 'shared/lib/classNames/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-// @ts-ignore
 import { useCallback, useEffect } from 'react';
-import { Page } from 'widgets/Page/Page';
-import { ArticlesFilters } from 'features/articlesFilters';
 import { useSearchParams } from 'react-router-dom'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import classNames from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+// @ts-ignore
+import { Page } from '@/widgets/Page/Page';
+import { ArticlesFilters } from '@/features/articlesFilters';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { ArticleInfiniteList } from '../../ui/ArticleInfiniteList/ArticleInfiniteList';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';

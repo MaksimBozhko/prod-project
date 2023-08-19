@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/providers/StoreProvider';
-import { ArticleType, ArticleView } from 'entities/Article';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { ArticleType, ArticleView } from '@/entities/Article';
 import { ArticleSortField } from '../consts/consts';
 
 export const getArticlesFiltersSearch = (state: StateSchema) => state.articlesFilters?.search ?? ''
