@@ -8,7 +8,6 @@ import { Dropdown } from '@/shared/ui/Popups';
 import {
   getUserAuthData, getUserIsAdmin, getUserIsManager, userActions,
 } from '@/entities/User';
-import cls from './AvatarDropDown.module.scss'
 
 interface AvatarDropDownProps {
   className?: string
@@ -31,7 +30,7 @@ export const AvatarDropDown = memo(({ className }: AvatarDropDownProps) => {
   }
   return (
     <Dropdown
-      className={classNames(cls.AvatarDropDown, {}, [className])}
+      className={classNames('', {}, [className])}
       items={[
         ...(isAdminPanelAvailable ? [
           {

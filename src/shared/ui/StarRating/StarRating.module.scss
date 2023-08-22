@@ -1,10 +1,13 @@
 .starIcon {
-  fill: none;
   cursor: pointer;
 }
 
-.hover {
-  fill: var(--primary-color)
+.normal {
+  fill: none;
+}
+
+.hovered {
+  fill: var(--primary-color);
 }
 
 .selected {
