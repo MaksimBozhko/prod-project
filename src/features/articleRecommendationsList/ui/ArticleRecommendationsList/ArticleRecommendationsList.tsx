@@ -16,7 +16,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
 
   const { data: articles, error, isLoading } = useArticleRecommendationsListQuery(5)
 
-  if (error) {
+  if (isLoading || error || !articles) {
     return (
       <div className={classNames('', {}, [className])}>
         <Text size={TextSize.L} title={t('ошибка')} />
