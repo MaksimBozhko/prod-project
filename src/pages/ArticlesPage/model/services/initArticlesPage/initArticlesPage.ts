@@ -2,8 +2,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { articlesFiltersActions, ArticleSortField, getArticlesFiltersInited } from '@/features/articlesFilters';
 import { SortOrder } from '@/shared/types';
-import { ArticleType } from '@/entities/Article';
+import { ArticleType, ArticleView } from '@/entities/Article';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
+import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 
 export const initArticlesPage = createAsyncThunk<void, URLSearchParams, ThunkConfig<string>>(
   'articlesPage/initArticlesPage',

@@ -1,5 +1,5 @@
 import {
-  memo, MutableRefObject, ReactNode, UIEvent, useRef,
+  memo, MutableRefObject, ReactNode, UIEvent, useEffect, useRef,
 } from 'react'
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -25,20 +25,24 @@ export const Page = memo(({ className, children, onScrollEnd }: PageProps) => {
   const dispatch = useAppDispatch()
   const { pathname: path } = useLocation()
   const scrollPosition = useSelector((state: StateSchema) => getScrollPositionByPath(state, path))
-
-  useInitialEffect(() => {
-    wrapperRef.current.scrollTop = scrollPosition
-  })
-
-  const onScrollHandler = useThrottle((e: UIEvent<HTMLDivElement>) => {
-    dispatch(scrollSaveActions.setScrollPosition({ path, position: e.currentTarget.scrollTop }))
-  }, 500)
+  const view = useSelector((state: StateSchema) => state.articlesFilters?.view)
 
   useInfiniteScroll({
     wrapperRef,
     triggerRef,
     callback: onScrollEnd,
   })
+
+  useInitialEffect(() => {
+    console.log('view', view)
+      wrapperRef.current.scrollTop = scrollPosition
+  })
+
+  const onScrollHandler = useThrottle((e: UIEvent<HTMLDivElement>) => {
+    console.log('111', e.currentTarget.scrollTop)
+    dispatch(scrollSaveActions.setScrollPosition({ path, position: e.currentTarget.scrollTop }))
+  }, 500)
+
   return (
     <main
       ref={wrapperRef}

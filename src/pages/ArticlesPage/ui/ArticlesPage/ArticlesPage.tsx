@@ -1,9 +1,8 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom'
 import classNames from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-// @ts-ignore
 import { Page } from '@/widgets/Page/Page';
 import { ArticlesFilters } from '@/features/articlesFilters';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
