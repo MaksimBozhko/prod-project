@@ -26,7 +26,7 @@ export default {
   ],
   moduleDirectories: [
     'node_modules',
-    '<rootDir>/src',
+    '<rootDir>',
   ],
   // modulePaths: [
   //   '<rootDir>src',

@@ -10,6 +10,8 @@ import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropDown } from '@/features/avatarDropDown';
 import cls from './Navbar.module.scss';
+import { ThemeSwitcher } from '@/shared/ui/ThemeSwitcher';
+import { LangSwitcher } from '@/widgets/LangSwitcher/LangSwitcher';
 
 interface NavbarProps {
   className?: string;
@@ -31,15 +33,19 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   if (authData) {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
-        <Text
-          className={cls.appName}
-          title={t('Ulbi TV App')}
-          theme={ThemeText.INVERTED}
-        />
+        {/*<Text*/}
+        {/*  className={cls.appName}*/}
+        {/*  title={t('Ulbi TV App')}*/}
+        {/*  theme={ThemeText.INVERTED}*/}
+        {/*/>*/}
         <HStack
-          gap="16"
+          gap="24"
           className={cls.actions}
         >
+            <LangSwitcher
+              className={cls.lang}
+            />
+          <ThemeSwitcher />
           <NotificationButton />
           <AvatarDropDown />
         </HStack>

@@ -83,6 +83,5 @@ export const ArticleListItem = memo((props: ArticleItemProps) => {
         <Text text={article.title} className={cls.title} />
       </Card>
     </AppLink>
-
   )
 })

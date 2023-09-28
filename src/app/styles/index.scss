@@ -18,6 +18,10 @@
 
 .content-page {
   display: flex;
+
+  .main-content {
+    width: 100%;
+  }
 }
 
 *::-webkit-scrollbar {

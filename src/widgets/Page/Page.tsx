@@ -34,12 +34,10 @@ export const Page = memo(({ className, children, onScrollEnd }: PageProps) => {
   })
 
   useInitialEffect(() => {
-    console.log('view', view)
-      wrapperRef.current.scrollTop = scrollPosition
+    wrapperRef.current.scrollTop = scrollPosition
   })
 
   const onScrollHandler = useThrottle((e: UIEvent<HTMLDivElement>) => {
-    console.log('111', e.currentTarget.scrollTop)
     dispatch(scrollSaveActions.setScrollPosition({ path, position: e.currentTarget.scrollTop }))
   }, 500)
 

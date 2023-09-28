@@ -1,7 +1,4 @@
 .BIG {
-  //.card {
-  //  margin-top: 16px;
-  //}
 
   .views {
     margin-left: auto;
@@ -46,7 +43,7 @@
 
 .SMALL {
   width: 230px;
-  transition: 0.2s;
+  transition: 0.2s transform;
   cursor: pointer;
 
   .date {
@@ -57,7 +54,7 @@
   }
 
   &:hover {
-    transform: scale(1.01);
+    transform: scale(1.02);
     opacity: 0.8;
 
     .date {

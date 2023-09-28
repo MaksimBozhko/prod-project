@@ -1,11 +1,11 @@
 import React, { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import cn from '@/shared/lib/classNames/classNames';
 import { AppRouter } from '@/app/providers/router';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { getUserInited, userActions } from '@/entities/User';
+import classNames from '@/shared/lib/classNames/classNames';
 
 export const App = () => {
   const { theme } = useTheme()
@@ -16,12 +16,14 @@ export const App = () => {
     dispatch(userActions.initAuthData())
   }, [dispatch])
   return (
-    <div className={cn('app', {}, [theme])}>
+    <div className={classNames('app', {}, [theme])}>
       <Suspense fallback="">
-        <Navbar />
         <div className="content-page">
           <Sidebar />
-          {inited && <AppRouter />}
+          <div className={classNames('main-content', {}, [])}>
+            <Navbar />
+            {inited && <AppRouter />}
+          </div>
         </div>
       </Suspense>
     </div>

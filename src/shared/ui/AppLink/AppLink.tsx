@@ -1,7 +1,8 @@
-import { memo, ReactNode } from 'react';
-import { Link, LinkProps } from 'react-router-dom';
+import { FC, memo, ReactNode } from 'react';
+import { LinkProps, NavLink } from 'react-router-dom';
 import classNames from '@/shared/lib/classNames/classNames';
 import cls from './AppLink.module.scss';
+import clsSidebar from '../../../widgets/Sidebar/ui/SidebarItem/SidebarItem.module.scss'
 
 export enum ThemeAppLink {
   PRIMARY = 'primary',
@@ -14,7 +15,7 @@ interface AppLinkProps extends LinkProps {
   children?: ReactNode
 }
 
-export const AppLink = memo((props: AppLinkProps) => {
+export const AppLink:FC<AppLinkProps> = memo((props) => {
   const {
     to,
     className,
@@ -23,13 +24,15 @@ export const AppLink = memo((props: AppLinkProps) => {
     ...otherProps
   } = props;
 
+  const linkClass = ({isActive}: any) => classNames(cls.AppLink, {[clsSidebar.active]: isActive }, [className, cls[theme]])
+
   return (
-    <Link
+    <NavLink
       to={to}
-      className={classNames(cls.AppLink, {}, [className, cls[theme]])}
+      className={linkClass}
       {...otherProps}
     >
       {children}
-    </Link>
+    </NavLink>
   );
 })

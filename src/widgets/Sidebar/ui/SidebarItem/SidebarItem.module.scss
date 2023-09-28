@@ -1,23 +1,47 @@
 .item {
   display: flex;
   align-items: center;
+  width: 196px;
+  height: 38px;
+  border-radius: 6px;
+  margin: 0 10px;
+  padding-left: 30px;
+  transition: 0.3s all;
 }
 
 .icon {
-  fill: var(--inverted-primary-color);
+  //fill: var(--inverted-primary-color);
+  stroke: var(--inverted-primary-color);
+  fill: none;
 }
 
 .link {
+  font: var(--font-m);
+  font-weight: 500;
   margin-left: 10px;
   opacity: 1;
-  transition: 0.3s opacity;
   white-space: nowrap;
+  transition: 0.3s all;
 }
 
 .collapsed {
+
+  .item {
+    width: 50px;
+    text-align: center;
+    justify-content: center;
+    padding-left: 0;
+    transition: 0.3s all;
+  }
+
   .link {
     opacity: 0;
-    transition: 0.3s opacity;
+    transition: 0.3s all;
     width: 0;
+    margin: 0;
   }
+}
+
+.active {
+  background: var(--active-link);
 }

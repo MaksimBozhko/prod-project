@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { AppLink, ThemeAppLink } from '@/shared/ui/AppLink/AppLink';
 import classNames from '@/shared/lib/classNames/classNames';
@@ -20,15 +20,17 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
     return null;
   }
   return (
+    <div className={classNames('', { [cls.collapsed]: collapsed })}>
     <AppLink
       theme={ThemeAppLink.SECONDARY}
       to={item.path}
-      className={classNames(cls.item, { [cls.collapsed]: collapsed })}
+      className={classNames(cls.item, )}
     >
       <item.Icon className={cls.icon} />
       <span className={cls.link}>
         {t(item.text)}
       </span>
     </AppLink>
+    </div>
   )
 })

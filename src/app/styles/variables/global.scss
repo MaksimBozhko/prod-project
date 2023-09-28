@@ -23,8 +23,8 @@
   --color: blue;
 
   //Размеры
-  --navbar-height: 50px;
-  --sidebar-width: 300px;
+  --navbar-height: 70px;
+  --sidebar-width: 216px;
   --sidebar-width-collapsed: 80px;
 
   // z - индексы
@@ -35,4 +35,7 @@
   --overlay-color: rgba(0 0 0 / 60%);
   --red-light: #f00;
   --red-dark: #ce0505;
+
+  // active link
+  --active-link: #24484E;
 }

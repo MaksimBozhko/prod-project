@@ -48,19 +48,19 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     path: RoutePath.main,
     element: <MainPage />,
   },
-  [AppRoutes.ABOUT]: {
-    path: RoutePath.about,
-    element: <AboutPage />,
+  [AppRoutes.ARTICLES]: {
+    path: RoutePath.articles,
+    element: <Articles />,
+    authOnly: true,
   },
   [AppRoutes.PROFILE]: {
     path: `${RoutePath.profile}:id`,
     element: <ProfilePage />,
     authOnly: true,
   },
-  [AppRoutes.ARTICLES]: {
-    path: RoutePath.articles,
-    element: <Articles />,
-    authOnly: true,
+  [AppRoutes.ABOUT]: {
+    path: RoutePath.about,
+    element: <AboutPage />,
   },
   [AppRoutes.ARTICLES_CREATE]: {
     path: RoutePath.articles_create,
