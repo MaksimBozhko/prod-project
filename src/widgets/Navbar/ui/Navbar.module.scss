@@ -3,21 +3,16 @@
   height: var(--navbar-height);
   display: flex;
   align-items: center;
-}
-
-.links,
-.actions {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
   padding-right: 50px;
-}
-
-.mainLink {
-  margin-right: 15px;
 }
 
 .appName {
   width: var(--sidebar-width);
   margin-left: 15px;
+}
+
+.dropDown {
+  display: flex;
 }

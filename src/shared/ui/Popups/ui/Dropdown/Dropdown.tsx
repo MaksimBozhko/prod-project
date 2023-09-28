@@ -1,5 +1,5 @@
 import { Menu } from '@headlessui/react'
-import { Fragment, ReactNode } from 'react';
+import { forwardRef, Fragment, ReactNode, Ref, useEffect, useRef, useState } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
 import { DropDownDirection } from '@/shared/types/ui';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
@@ -19,14 +19,16 @@ interface DropdownType {
   items: DropdownItem[]
   trigger: ReactNode
   direction?: DropDownDirection
+  // clickDropDownHandler: () => void
 }
 
-export function Dropdown(props: DropdownType) {
+export const Dropdown = forwardRef((props: DropdownType, ref: any) => {
   const {
     className,
     items,
     trigger,
     direction = 'bottom right',
+    // clickDropDownHandler
   } = props
 
   return (
@@ -34,7 +36,7 @@ export function Dropdown(props: DropdownType) {
       <Menu.Button className={popupCls.trigger}>
         {trigger}
       </Menu.Button>
-      <Menu.Items className={classNames(cls.menu, {}, [mapDirectionsClass[direction]])}>
+      <Menu.Items ref={ref} className={classNames(cls.menu, {}, [mapDirectionsClass[direction]])} >
         {items.map((item, index) => {
           const content = ({ active }: { active: boolean }) => (
             <button
@@ -72,4 +74,4 @@ export function Dropdown(props: DropdownType) {
       </Menu.Items>
     </Menu>
   )
-}
+})

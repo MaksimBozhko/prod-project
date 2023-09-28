@@ -3,7 +3,6 @@ import React, { memo, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Button, ThemeButton } from '@/shared/ui/Button/Button';
 import { getUserAuthData } from '@/entities/User';
-import { Text, ThemeText } from '@/shared/ui/Text/Text';
 import classNames from '@/shared/lib/classNames/classNames';
 import { LoginModal } from '@/features/AuthByUserName';
 import { HStack } from '@/shared/ui/Stack';
@@ -30,6 +29,13 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     setIsAuthModal(true);
   }, []);
 
+  let content = (
+    <>
+      <LangSwitcher className={cls.lang}/>
+      <ThemeSwitcher />
+    </>
+  )
+
   if (authData) {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
@@ -40,25 +46,20 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         {/*/>*/}
         <HStack
           gap="24"
-          className={cls.actions}
         >
-            <LangSwitcher
-              className={cls.lang}
-            />
-          <ThemeSwitcher />
+          {content}
           <NotificationButton />
-          <AvatarDropDown />
+          <AvatarDropDown className={cls.dropDown} />
         </HStack>
-
       </header>
     );
   }
 
   return (
     <header className={classNames(cls.Navbar, {}, [className])}>
+      {content}
       <Button
-        theme={ThemeButton.CLEAR_INVERTED}
-        className={cls.links}
+        theme={ThemeButton.CLEAR}
         onClick={onShowModal}
       >
         {t('Войти')}

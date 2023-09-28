@@ -1,0 +1,19 @@
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.arrow {
+  transform: rotate(90deg);
+  transition: 0.2s all;
+}
+
+.active {
+  transform: rotate(0deg);
+}
+
+.icon {
+  stroke: var(--primary-color);
+  fill: none;
+}
