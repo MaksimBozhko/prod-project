@@ -32,7 +32,7 @@ export interface Article {
   subtitle: string
   img: string
   views: number
-  createdAt: string,
+  createdAt: string
   type: ArticleType[]
   blocks: ArticleBlock[]
 }

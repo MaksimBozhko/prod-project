@@ -5,10 +5,11 @@ import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
 import { Articles } from '@/pages/ArticlesPage';
 import { ArticleDetails } from '@/pages/ArticleDetailsPage';
-import { ArticleEditPage } from '@/pages/ArticleEditPage';
+import { ArticleEditPage } from '@/pages/ArticleCreatePage';
 import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { UserRole } from '@/entities/User';
+import ArticleCreatePage from '@/pages/ArticleCreatePage/ui/ArticleCreatePage/ArticleCreatePage';
 
 export type AppRoutesProps = {
   authOnly?: boolean
@@ -64,12 +65,12 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   },
   [AppRoutes.ARTICLES_CREATE]: {
     path: RoutePath.articles_create,
-    element: <ArticleEditPage />,
+    element: <ArticleCreatePage />,
     authOnly: true,
   },
   [AppRoutes.ARTICLES_EDIT]: {
     path: RoutePath.articles_edit,
-    element: <ArticleEditPage />,
+    element: <ArticleCreatePage />,
     authOnly: true,
   },
   [AppRoutes.ARTICLE_DETAILS]: {

@@ -14,7 +14,7 @@ import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { Icon } from '@/shared/ui/Icon/Icon';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
-import { ArticleSortField } from '../../model/consts/consts';
+import { ArticleSortField, typeTabs } from '../../model/consts/consts';
 import { ArticleSortSelector } from '../ArticleSortSelector/ArticleSortSelector';
 import { ArticleTypeTabs } from '../ArticleTypeTabs/ArticleTypeTabs';
 import {
@@ -104,6 +104,7 @@ export const ArticlesFilters = memo(({ className }: ArticlesFiltersProps) => {
           value={type}
           onTypeChanged={onChangeType}
           className={cls.tabs}
+          tabs={typeTabs}
         />
       </div>
     </DynamicModuleLoader>
