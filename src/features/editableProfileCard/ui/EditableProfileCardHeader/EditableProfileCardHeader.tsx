@@ -4,12 +4,13 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import classNames from '@/shared/lib/classNames/classNames'
 import { HStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { Button, ThemeButton } from '@/shared/ui/Button/Button';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { profileActions } from '../../model/slice/profileSlice';
 import { getIsProfilePageCanEdit } from '../../model/selectors/getProfilePageCanEdit/getProfilePageCanEdit';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import cls from './EditableProfileCardHeader.module.scss';
 
 interface EditableProfileCardHeaderProps {
   className?: string
@@ -35,8 +36,8 @@ export const EditableProfileCardHeader = memo(({ className }: EditableProfileCar
   }, [dispatch])
 
   return (
-    <HStack max justify="between" className={classNames('', {}, [className])}>
-      <Text title={t('Профиль')} />
+    <HStack max justify="between" className={classNames(cls.EditableProfileCardHeader, {}, [className])}>
+      <Text title={t('Профиль')} size={TextSize.L} className={cls.title} />
       {isCanEdit && (
         <div>
           {readonly
@@ -59,7 +60,7 @@ export const EditableProfileCardHeader = memo(({ className }: EditableProfileCar
                   {t('Отменить')}
                 </Button>
                 <Button
-                  theme={ThemeButton.OUTLINE}
+                  theme={ThemeButton.BACKGROUND_INVERTED}
                   onClick={onSave}
                   data-testid="EditableProfileCardHeader.SaveButton"
                 >

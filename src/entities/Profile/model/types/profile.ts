@@ -10,5 +10,5 @@ export interface Profile {
   currency?: Currency,
   country?: Country,
   username?: string,
-  avatar?: string
+  avatar?: any
 }

@@ -12,6 +12,12 @@
 .iconBlock {
   display: flex;
   gap: 30px;
+
+  @media screen and (max-width: 550px) {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
 }
 
 .plusIcon {

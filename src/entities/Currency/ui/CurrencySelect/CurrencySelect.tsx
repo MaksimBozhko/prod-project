@@ -37,7 +37,7 @@ export const CurrencySelect = (props: CurrencySelectProps) => {
       className={classNames('', {}, [className])}
       value={value}
       onChange={onChangeHandler}
-      label={t('Укажите валюту')}
+      // label={t('Укажите валюту')}
     />
   )
 }

@@ -11,6 +11,8 @@ import { initArticlesPage } from '../../model/services/initArticlesPage/initArti
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { articlesPageReducer } from '../../model/slices/ArticlesPageSlice';
 import cls from './ArticlesPage.module.scss'
+import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   className?: string
@@ -21,6 +23,7 @@ const reducers: ReducerList = {
 }
 
 const ArticlesPage = ({ className }: Props) => {
+  const { t } = useTranslation('article')
   const dispatch = useAppDispatch()
   const [searchParams] = useSearchParams()
 
@@ -38,6 +41,7 @@ const ArticlesPage = ({ className }: Props) => {
         onScrollEnd={onLoadNextPart}
         className={classNames('', {}, [className])}
       >
+        <Text title={t('Статьи')} size={TextSize.L} className={cls.title} />
         <ArticlesFilters className={cls.filters} />
         <ArticleInfiniteList />
       </Page>

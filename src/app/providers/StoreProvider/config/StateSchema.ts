@@ -13,11 +13,13 @@ import { ScrollSaveSchema } from '@/features/scrollSave';
 import { ArticlesFiltersSchema } from '@/features/articlesFilters';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { ProfileSchema } from '@/features/editableProfileCard';
+import { SidebarSchema } from '@/widgets/Sidebar';
 
 export interface StateSchema {
   counter: CounterSchema
   user: UserSchema
   scroll: ScrollSaveSchema
+  sidebar: SidebarSchema
   [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
   // async reducers

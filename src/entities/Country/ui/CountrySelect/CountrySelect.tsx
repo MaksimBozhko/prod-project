@@ -36,7 +36,7 @@ export const CountrySelect = memo(({
       value={value}
       onChange={onChangeHandler}
       direction="top right"
-      label={t('Укажите страну')}
+      // label={t('Укажите страну')}
     />
   )
 

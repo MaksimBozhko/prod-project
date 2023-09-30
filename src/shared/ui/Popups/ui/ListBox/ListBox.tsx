@@ -1,6 +1,6 @@
 import { Fragment, ReactNode } from 'react'
 import { Listbox as HListBox } from '@headlessui/react'
-import { Button } from '@/shared/ui/Button/Button';
+import { Button, ThemeButton } from '@/shared/ui/Button/Button';
 import classNames from '@/shared/lib/classNames/classNames';
 import { HStack } from '@/shared/ui/Stack';
 import { DropDownDirection } from '@/shared/types/ui';
@@ -52,6 +52,7 @@ export function ListBox(props: ListBoxType) {
         >
           <Button
             disabled={readonly}
+            theme={ThemeButton.CLEAR}
           >
             {value ?? defaultValue}
           </Button>

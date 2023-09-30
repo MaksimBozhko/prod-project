@@ -8,6 +8,7 @@ import { $api } from '@/shared/api/api';
 import { scrollSaveReducer } from '@/features/scrollSave';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
+import { sidebarReducer } from '@/widgets/Sidebar';
 
 export function createReduxStore(
   initialState?: StateSchema,
@@ -19,6 +20,7 @@ export function createReduxStore(
     counter: counterReducer,
     user: userReducer,
     scroll: scrollSaveReducer,
+    sidebar: sidebarReducer,
     [rtkApi.reducerPath]: rtkApi.reducer,
   }
 

@@ -5,6 +5,7 @@ import { Select, SelectOption } from '@/shared/ui/Select/Select';
 import { SortOrder } from '@/shared/types';
 import { ArticleSortField } from '../../model/consts/consts';
 import cls from './ArticleSortSelector.module.scss'
+import { Text } from '@/shared/ui/Text/Text';
 
 interface ArticleSortSelectorProps {
   className?: string
@@ -52,14 +53,15 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
 
   return (
     <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
+      <Text text={t('Сортировать по')}/>
       <Select<SortOrder>
-        label={t('Сортировать по')}
+        // label={t('Сортировать по')}
         onChange={onOrderChange}
         value={orderValue}
         options={orderOptions}
       />
       <Select<ArticleSortField>
-        label={t('по')}
+        // label={t('по')}
         onChange={onSortChange}
         value={sortValue}
         options={sortFieldOptions}

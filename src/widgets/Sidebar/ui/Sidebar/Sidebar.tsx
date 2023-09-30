@@ -8,16 +8,20 @@ import { SidebarItem } from '@/widgets/Sidebar/ui/SidebarItem/SidebarItem';
 import { VStack } from '@/shared/ui/Stack';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems/getSidebarItems';
 import cls from './Sidebar.module.scss';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { sidebarActions } from '@/widgets/Sidebar';
 
 interface SidebarProps {
   className?: string
 }
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
+  const dispatch = useAppDispatch()
   const [collapsed, setCollapsed] = useState(false);
   const sidebarItemsList = useSelector(getSidebarItems)
   const onToggle = () => {
     setCollapsed((prev) => !prev);
+    dispatch(sidebarActions.setCollapsed(collapsed))
   };
 
   const itemsList = useMemo(() => sidebarItemsList.map((item) => (

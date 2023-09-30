@@ -1,6 +1,18 @@
 .ProfileCard {
-  padding: 20px;
-  border: 2px solid var(--inverted-bg-color);
+
+  .avatarWrapper {
+    align-self: center;
+    width: 300px;
+    height: 200px;
+
+    .avatar {
+      object-fit: cover;
+    }
+  }
+
+  .inputAge {
+    width: 65px;
+  }
 }
 
 .loading,
@@ -8,6 +20,4 @@
   height: 300px;
 }
 
-.editing {
-  border: 2px solid var(--inverted-primary-color);
-}
+

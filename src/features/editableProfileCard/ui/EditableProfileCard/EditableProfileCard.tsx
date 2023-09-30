@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import React, { memo, useCallback } from 'react';
+import React, { ChangeEvent, memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { Text, ThemeText } from '@/shared/ui/Text/Text';
 import classNames from '@/shared/lib/classNames/classNames';
@@ -86,7 +86,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <VStack gap="16" className={classNames('', {}, [className])}>
+      <VStack gap="32" className={classNames('', {}, [className])}>
         <EditableProfileCardHeader />
         {validateErrors?.length && (
           validateErrors.map((error) => (
