@@ -33,7 +33,7 @@ export const ArticleListItem = memo((props: ArticleItemProps) => {
   } = props
   const { t } = useTranslation()
 
-  const types = <Text text={article.type.join(', ')} className={cls.types} />
+  const types = <Text text={article.type} className={cls.types} />
   const views = (
     <>
       <Text text={String(article.views)} className={cls.views} />
@@ -46,7 +46,7 @@ export const ArticleListItem = memo((props: ArticleItemProps) => {
     return (
       <Card id="card" className={classNames(cls.ArticleItem, {}, [className, cls[view], cls.card])}>
         <div className={cls.header}>
-          <Avatar size={30} src={article.img} alt={article.title} />
+          <Avatar size={30} src={article.user.avatar} alt={article.user.avatar} />
           <Text text={article.user.username} className={cls.username} />
           <Text text={article.createdAt} className={cls.date} />
         </div>

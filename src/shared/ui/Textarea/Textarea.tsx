@@ -2,11 +2,11 @@ import React, {
   InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
 import classNames from '@/shared/lib/classNames/classNames';
-import cls from './Input.module.scss'
+import cls from './Textarea.module.scss'
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
+type HTMLTextAreaProps = Omit<InputHTMLAttributes<HTMLTextAreaElement>, 'value' | 'onChange' | 'readOnly'>
 
-interface InputProps extends HTMLInputProps {
+interface TextAreaProps extends HTMLTextAreaProps {
   className?: string
   value?: string | number
   onChange?: (value: string) => void
@@ -14,21 +14,20 @@ interface InputProps extends HTMLInputProps {
   readonly?: boolean
 }
 
-export const Input = memo((props: InputProps) => {
+export const Textarea = memo((props: TextAreaProps) => {
   const {
     className,
     value,
     onChange,
-    type = 'text',
     placeholder,
     autoFocus,
     readonly,
     ...otherProps
   } = props
 
-  const ref = useRef<HTMLInputElement>(null)
+  const ref = useRef<HTMLTextAreaElement | null>(null);
   const [isFocused, setIsFocused] = useState(false)
-  const [caretPosition, setCaretPosition] = useState(0)
+  // const [caretPosition, setCaretPosition] = useState(0)
 
   const onBlur = () => {
     setIsFocused(false)
@@ -38,23 +37,28 @@ export const Input = memo((props: InputProps) => {
     setIsFocused(true)
   }
 
-  const onSelect = (e: any) => {
-    setCaretPosition(e?.target?.selectionStart || 0)
+  // const onSelect = (e: any) => {
+  //   setCaretPosition(e?.target?.selectionStart || 0)
+  // }
+
+  const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    onChange?.(e.target.value)
+    // setCaretPosition(e.target.value.length)
   }
 
-  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onChange?.(e.target.value)
-    setCaretPosition(e.target.value.length)
-  }
+  // useEffect(() => {
+  //   if (autoFocus) {
+  //     setIsFocused(true)
+  //     ref.current?.focus()
+  //   }
+  // }, [autoFocus])
 
   useEffect(() => {
-    if (autoFocus) {
-      setIsFocused(true)
-      ref.current?.focus()
+    if (ref?.current) {
+      ref.current.style.height = '0px'
+      ref.current.style.height = ref.current.scrollHeight + 'px'
     }
-  }, [autoFocus])
-
-  const isCaretVisible = isFocused && !readonly
+  }, [onChangeHandler])
 
   return (
     <div className={classNames(cls.InputWrapper, {}, [className])}>
@@ -63,23 +67,16 @@ export const Input = memo((props: InputProps) => {
           {`${placeholder}>`}
         </div>
       )}
-      <div className={cls.caretWrapper}>
-        <input
+        <textarea
           ref={ref}
-          value={value}
+          value={value || ''}
           onChange={onChangeHandler}
-          type={type}
           className={cls.input}
           onFocus={onFocus}
           onBlur={onBlur}
-          onSelect={onSelect}
           readOnly={readonly}
           {...otherProps}
         />
-        {isCaretVisible && (
-          <span className={cls.caret} style={{ left: `${caretPosition * 9}px` }} />
-        )}
-      </div>
     </div>
   )
 })

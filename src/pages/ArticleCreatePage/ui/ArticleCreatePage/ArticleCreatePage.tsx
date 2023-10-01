@@ -5,6 +5,8 @@ import classNames from '@/shared/lib/classNames/classNames'
 import { Page } from '@/widgets/Page/Page';
 import { CreateArticle, createArticleReducer } from '@/features/createArticle';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
+import cls from '@/features/editableProfileCard/ui/EditableProfileCardHeader/EditableProfileCardHeader.module.scss';
 
 interface ArticleEditPageProps {
   className?: string
@@ -22,9 +24,15 @@ const ArticleCreatePage = memo(({className}: ArticleEditPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducer}>
       <Page className={classNames('', {}, [className])}>
-        {isEdit
-          ? t('Редактирование статьи ') + id
-          : t('Создание новой статьи')}
+        <Text
+          title={
+          isEdit
+            ? t('Редактирование статьи ') + id
+            : t('Новая статья')
+        }
+          size={TextSize.L}
+          className={cls.title}
+        />
         <CreateArticle/>
       </Page>
     </DynamicModuleLoader>

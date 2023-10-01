@@ -20,19 +20,20 @@ export interface ArticleImageBlock extends ArticleBlockBase{
 export interface ArticleTextBlock extends ArticleBlockBase{
   type: ArticleBlockType.TEXT
   title?: string
-  paragraphs: string[]
+  paragraphs: string
 }
 
 export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock
 
 export interface Article {
   id: string
+  userId: string
   user: User
   title: string
   subtitle: string
   img: string
   views: number
   createdAt: string
-  type: ArticleType[]
+  type: ArticleType
   blocks: ArticleBlock[]
 }

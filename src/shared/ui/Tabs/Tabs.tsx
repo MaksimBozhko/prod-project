@@ -1,6 +1,7 @@
 import classNames from '@/shared/lib/classNames/classNames'
 import { Card, CardTheme } from '@/shared/ui/Card/Card';
 import cls from './Tabs.module.scss'
+import { useTranslation } from 'react-i18next';
 
 export type TabItem<T extends string> = {
   value: T
@@ -22,6 +23,8 @@ export const Tabs = <T extends string>(props: TabsProps<T>) => {
     onTabClick,
   } = props
 
+  const {t} = useTranslation('article')
+
   const clickHandle = (value: string) => () => {
     onTabClick(value as T)
   }
@@ -33,9 +36,9 @@ export const Tabs = <T extends string>(props: TabsProps<T>) => {
           key={tab.value}
           onClick={clickHandle(tab.value)}
           theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINED}
-          className={cls.card}
+          className={classNames(cls.card, {}, [className])}
         >
-          {tab.content}
+          {t(`${tab.content}`)}
         </Card>
       ))}
     </div>
