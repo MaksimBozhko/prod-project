@@ -32,7 +32,7 @@ export const Breadcrumb = ({separator = '/', items, className}: BreadcrumbProps)
   console.log('bread', items)
   if (!items[items.length - 1].label) return <Skeleton width='330px' height='24px'/>
 
-  return <Flex gap='8' className={classNames(cls.Breadcrumb, {}, [className])}>
+  return <Flex gap='8' align='center' className={classNames(cls.Breadcrumb, {}, [className])}>
     <Icon Svg={ArrowLeftIcon} />
     <Flex direction='row' gap={'4'}>
       {children.map(({ to, label, separator }: any) => (

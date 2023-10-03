@@ -35,7 +35,7 @@ export const ArticleDetailsPageHeader = memo(({ className }: ArticleDetailsPageH
   ]),[article])
 
   return (
-    <HStack max justify="between" className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
+    <HStack max justify="between" align='center' className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
       <Breadcrumb items={items} className={cls.btnBack}/>
       {isCanEdit && (
         <Button
