@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { memo, useCallback } from 'react'
+import { memo, useCallback, useMemo } from 'react'
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { GoBackBtn } from '@/shared/ui/GoBackButton/GoBackBtn';
@@ -9,6 +9,8 @@ import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { getArticleDetailsData } from '@/entities/Article';
 import { HStack } from '@/shared/ui/Stack';
 import { getCanEditArticle } from '../../model/selectors/article';
+import cls from './ArticleDetailsPageHeader.module.scss'
+import { Breadcrumb, ItemsType } from '@/shared/ui/Breadcrumb/ui/Breadcrumb/Breadcrumb';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string
@@ -26,13 +28,20 @@ export const ArticleDetailsPageHeader = memo(({ className }: ArticleDetailsPageH
     navigate(`${RoutePath.article_details}${article?.id}/edit`)
   }, [article?.id, navigate])
 
+  const items: ItemsType[] = useMemo(() => ([
+    { to: '/articles', label: 'Articles' },
+    { to: `/articles?type=${article?.type}`, label: article?.type },
+    { to: '', label: article?.title },
+  ]),[article])
+
   return (
-    <HStack max justify="between" className={classNames('', {}, [className])}>
-      <GoBackBtn>{t('Вернуться назад')}</GoBackBtn>
+    <HStack max justify="between" className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
+      <Breadcrumb items={items} className={cls.btnBack}/>
       {isCanEdit && (
         <Button
           theme={ThemeButton.OUTLINE}
           onClick={onEditArticle}
+          className={cls.btnEdit}
         >
           {t('Редактировать')}
         </Button>

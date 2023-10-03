@@ -13,6 +13,10 @@ import { articlesPageReducer } from '../../model/slices/ArticlesPageSlice';
 import cls from './ArticlesPage.module.scss'
 import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { ArticleList } from '@/entities/Article';
+import {
+  useArticleRecommendationsListQuery
+} from '@/features/articleRecommendationsList/api/articleRecommendationsApi';
 
 interface Props {
   className?: string

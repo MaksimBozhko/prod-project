@@ -1,0 +1,12 @@
+.ArticleDetailsPageHeader {
+  .btnBack {
+    align-self: start ;
+  }
+  .btnEdit {
+    align-self: end ;
+  }
+  @media screen and (max-width: 1000px) {
+  flex-direction: column;
+    gap:10px
+  }
+}

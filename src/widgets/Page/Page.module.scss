@@ -4,4 +4,8 @@
   height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
   flex-shrink: 100;
+
+  @media screen and (max-width: 800px) {
+    padding: 20px 20px;
+  }
 }

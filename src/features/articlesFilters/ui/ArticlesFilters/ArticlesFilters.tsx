@@ -48,6 +48,7 @@ export const ArticlesFilters = memo(({ className }: ArticlesFiltersProps) => {
 
   const fetchData = useCallback(() => {
     dispatch(fetchArticlesList({ replace: true }))
+    dispatch(articlesPageActions.setPage(1))
   }, [dispatch])
 
   const debouncedFetchData = useDebounce(fetchData, 800)
