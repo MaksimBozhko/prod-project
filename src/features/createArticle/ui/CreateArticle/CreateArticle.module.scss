@@ -1,0 +1,25 @@
+.CreateArticle {
+
+  .articleInfo {
+    width: 100%;
+
+    .cardInputInfo {
+      width: 100%;
+    }
+  }
+  .blockType {
+    width: 50%;
+    align-items: center;
+  }
+  .tabs {
+    flex-direction: column;
+    white-space: normal;
+    align-content: center;
+    max-width: 150px;
+  }
+
+  .btnSave {
+    margin-left: auto;
+    margin-top: 30px;
+  }
+}
