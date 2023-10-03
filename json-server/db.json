@@ -315,7 +315,16 @@
           "src": "https://example.com/it-trend-image.png",
           "title": "Image: AI and Automation"
         }
-      ]
+      ],
+      "user": {
+        "id": "1",
+        "username": "admin",
+        "password": "123",
+        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJVYPKeVtePD_EBMxjXzoHk__89HDRTpghMQ&usqp=CAU",
+        "roles": [
+          "ADMIN"
+        ]
+      }
     },
     {
       "id": "7",
@@ -472,6 +481,26 @@
           "code": "const chatGPT = new ChatGPT();\nchatGPT.generateResponse();"
         }
       ]
+    },
+    {
+      "id": "11",
+      "userId": "1",
+      "title": "pretty cat",
+      "subtitle": "some text for article ",
+      "img": "https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&quality=85&auto=format&fit=max&s=a52bbe202f57ac0f5ff7f47166906403",
+      "views": 0,
+      "createdAt": "03.10.2023",
+      "type": "ENVIRONMENT",
+      "blocks": [],
+      "user": {
+        "id": "1",
+        "username": "admin",
+        "password": "123",
+        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJVYPKeVtePD_EBMxjXzoHk__89HDRTpghMQ&usqp=CAU",
+        "roles": [
+          "ADMIN"
+        ]
+      }
     }
   ],
   "comments": [
