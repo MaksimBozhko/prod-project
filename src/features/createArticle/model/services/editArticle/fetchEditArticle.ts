@@ -8,7 +8,7 @@ export const fetchEditArticle = createAsyncThunk<
   string | undefined,
   ThunkConfig<string>
 >(
-  'articlesPage/fetchArticleRecommendations',
+  'articlesCreatePage/fetchEditArticle',
   async (userId, thunkAPI) => {
     const {
       rejectWithValue,

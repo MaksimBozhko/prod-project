@@ -3,12 +3,12 @@ import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { Article } from '@/entities/Article';
 import { getArticleCreateData } from '@/features/createArticle/model/selectors/createArticleSelector';
 
-export const createArticle = createAsyncThunk<
+export const fetchCreateArticle = createAsyncThunk<
   any,
   string | undefined,
   ThunkConfig<string>
 >(
-  'articlesPage/fetchArticleRecommendations',
+  'articlesCreatePage/fetchCreateArticle',
   async (userId, thunkAPI) => {
     const {
       rejectWithValue,

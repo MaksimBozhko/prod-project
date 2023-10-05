@@ -68,7 +68,11 @@ export const CreateArticleBlocks = memo(({className}: CreateArticleBlocksProps) 
                   />
                   <Card className={cls.inputBlock}>
                     <Textarea
-                      value={block.type === ArticleBlockType.TEXT ? block.paragraphs : block.src}
+                      value={
+                      block.type === ArticleBlockType.TEXT
+                        ? block.paragraphs.join()
+                        : block.src
+                    }
                       onChange={(value) => onChangeBlockContent(value, index)}
                     />
                   </Card>

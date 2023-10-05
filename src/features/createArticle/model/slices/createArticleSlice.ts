@@ -10,6 +10,8 @@ import {
 import { getCurrentDate } from '@/shared/helpers/currentDate';
 import { User } from '@/entities/User';
 import { fetchArticleById } from '@/entities/Article/model/services/fetchArticleById/fetchArticleById';
+import { fetchEditArticle } from '@/features/createArticle/model/services/editArticle/fetchEditArticle';
+import { fetchCreateArticle } from '@/features/createArticle/model/services/createArticle/fetchCreateArticle';
 
 const initialState: CreateArticleSchema = {
   article: {
@@ -49,7 +51,7 @@ export const createArticleSlice = createSlice({
           state.article.blocks.push({id, type: payload, code: ''})
           break;
         case ArticleBlockType.TEXT:
-          state.article.blocks.push({id, type: payload, title: '', paragraphs: ''})
+          state.article.blocks.push({id, type: payload, title: '', paragraphs: ['']})
           break;
         case ArticleBlockType.IMAGE:
           state.article.blocks.push({id, type: payload, title: '', src: ''})
@@ -67,7 +69,7 @@ export const createArticleSlice = createSlice({
       const {id, content} = payload
       const block = state.article.blocks.find((block) => block.id === id.toString())
       if (block && block.type == ArticleBlockType.TEXT) {
-        block.paragraphs = content
+        block.paragraphs = [content]
       } else if (block && block.type == ArticleBlockType.CODE) {
         block.code = content
       } else if (block && block.type == ArticleBlockType.IMAGE) {
@@ -95,6 +97,28 @@ export const createArticleSlice = createSlice({
         state.isLoading = false
         state.error = payload
       })
+      // .addCase(fetchCreateArticle.fulfilled, (state, {payload}: PayloadAction<Article>) => {
+      //   state.isLoading = false
+      // })
+      // .addCase(fetchCreateArticle.pending, (state) => {
+      //   state.error = undefined
+      //   state.isLoading = true
+      // })
+      // .addCase(fetchCreateArticle.rejected, (state, {payload}) => {
+      //   state.isLoading = false
+      //   state.error = payload
+      // })
+      // .addCase(fetchEditArticle.fulfilled, (state, {payload}: PayloadAction<Article>) => {
+      //   state.isLoading = false
+      // })
+      // .addCase(fetchEditArticle.pending, (state) => {
+      //   state.error = undefined
+      //   state.isLoading = true
+      // })
+      // .addCase(fetchEditArticle.rejected, (state, {payload}) => {
+      //   state.isLoading = false
+      //   state.error = payload
+      // })
   },
 });
 

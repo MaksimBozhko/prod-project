@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import React, { memo, useCallback, useEffect } from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import cls from './CreateArticle.module.scss';
 import classNames from '@/shared/lib/classNames/classNames';
 import { Flex } from '@/shared/ui/Stack/Flex/Flex';
@@ -20,12 +20,14 @@ import { typeTabsCreate } from '@/features/createArticle/model/consts/consts';
 import { CreateArticleBlocks } from '@/features/createArticle/ui/CreateArticleBlocks/CreateArticleBlocks';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Button, ButtonSize, ThemeButton } from '@/shared/ui/Button/Button';
-import { createArticle } from '@/features/createArticle/model/services/createArticle/fetchCreateArticle';
+import { fetchCreateArticle } from '@/features/createArticle/model/services/createArticle/fetchCreateArticle';
 import { getUserAuthData } from '@/entities/User';
 import { fetchArticleById } from '@/entities/Article/model/services/fetchArticleById/fetchArticleById';
 import { fetchEditArticle } from '@/features/createArticle/model/services/editArticle/fetchEditArticle';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Modal } from '@/shared/ui/Modal/Modal';
+import { Loader } from '@/shared/ui/Loader/Loader';
 
 const reducer: ReducerList = {
   createArticle: createArticleReducer,
@@ -40,18 +42,22 @@ export const CreateArticle = memo((props: CreateArticleProps) => {
   const {className, id} = props;
   const {t} = useTranslation();
   const dispatch = useAppDispatch()
+  const [modalView, setModalView] = useState<boolean>(false)
 
   const articleData = useSelector(getArticleCreateData)
   const error = useSelector(getArticleCreateError)
   const isLoading = useSelector(getArticleCreateIsLoading)
-  // const isLoading = true
   const user = useSelector(getUserAuthData)
 
-  console.log('loadingg', isLoading)
-
   useEffect(() => {
-    dispatch(fetchArticleById(id))
+    if (id) {
+      dispatch(fetchArticleById(id))
+    }
   }, [dispatch, id])
+
+  const viewModalHandler = useCallback(() => {
+    // setModalView(true)
+  }, [])
 
   const onChangeTitle = useCallback((value?: string) => {
     dispatch(createArticleActions.setTitle(value || ''))
@@ -71,10 +77,10 @@ export const CreateArticle = memo((props: CreateArticleProps) => {
 
   const onCreateArticleHandler = useCallback(() => {
     if (id) {
-      dispatch(fetchEditArticle(id))
+      dispatch(fetchEditArticle(id)).then(viewModalHandler)
     } else {
       dispatch(createArticleActions.setRestInfo(user?.id!))
-      dispatch(createArticle(user?.id))
+      dispatch(fetchCreateArticle(user?.id)).then(viewModalHandler)
     }
   }, [dispatch])
 
@@ -174,8 +180,10 @@ export const CreateArticle = memo((props: CreateArticleProps) => {
             theme={ThemeButton.BACKGROUND_INVERTED}
             className={cls.btnSave}
             onClick={onCreateArticleHandler}
+            disabled={isLoading}
           >
-            {id ? t('Сохранить') : t('Создать')}
+            {isLoading ? <Loader/> :
+              id ? t('Сохранить') : t('Создать')}
           </Button>
         </Flex>
       </>
@@ -187,6 +195,11 @@ export const CreateArticle = memo((props: CreateArticleProps) => {
       <div className={classNames(cls.CreateArticle, {}, [className])}>
         {content}
       </div>
+      { modalView && (
+        <Modal isOpen={modalView}>
+          modal content
+        </Modal>
+      )}
     </DynamicModuleLoader>
   );
 });
