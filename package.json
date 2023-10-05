@@ -26,7 +26,7 @@
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "generator:slice": "node scripts/createSlice/index.js",
-    "predeploy": "npm run build:prod",
+    "predeploy": "npm run build:dev",
     "deploy": "gh-pages -d build"
   },
   "keywords": [],
