@@ -27,7 +27,7 @@
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "generator:slice": "node scripts/createSlice/index.js",
     "predeploy": "npm run build:prod",
-    "deploy": "gh-pages -d build:prod"
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
